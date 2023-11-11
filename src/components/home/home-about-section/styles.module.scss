@@ -1,0 +1,57 @@
+@import "/src/common/colors.scss";
+
+.home-about-container {
+  display: flex;
+  column-gap: 60px;
+  align-items: center;
+  background-color: $soft;
+  border-radius: 20px;
+
+  .text-outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50%;
+    padding: 40px;
+    border-radius: 20px;
+    row-gap: 10px;
+
+    .text-inner-container {
+      background-color: white;
+      width: 100%;
+      padding: 50px 70px;
+      border-radius: 20px;
+
+      .title {
+        font-size: 2rem;
+      }
+
+      p {
+        margin-bottom: 50px;
+      }
+
+      .cta-button {
+        text-decoration: none;
+        color: $alien;
+        border: 3px solid $dark;
+        background-color: $dark;
+        border-radius: 25px;
+        padding: 10px;
+        width: 300px;
+        text-align: center;
+      }
+
+      .cta-button:hover {
+        background-color: $medium;
+        border-color: $medium;
+      }
+    }
+  }
+
+  .profile-picture {
+    width: 320px;
+    object-fit: contain;
+    object-position: top;
+    border-radius: 20px;
+  }
+}

@@ -1,0 +1,86 @@
+@import "/src/common/colors.scss";
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-top: 40px;
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      line-height: 1px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      row-gap: 10px;
+      flex-direction: column;
+
+      a {
+        color: black;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      a:hover {
+        color: $dark;
+      }
+    }
+  }
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    column-gap: 20px;
+    row-gap: 20px;
+
+    .contact {
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+
+      a {
+        color: black;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      a:hover {
+        color: $dark;
+      }
+    }
+
+    .cta-button {
+      text-decoration: none;
+      color: $alien;
+      border: 3px solid $dark;
+      background-color: $dark;
+      border-radius: 25px;
+      padding: 10px;
+      width: 200px;
+      text-align: center;
+    }
+
+    .cta-button:hover {
+      background-color: $medium;
+      border-color: $medium;
+    }
+  }
+
+  .address-container {
+    display: flex;
+    align-items: flex-start;
+    address {
+      width: 200px;
+    }
+  }
+  .copyright {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+}

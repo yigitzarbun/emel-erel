@@ -1,0 +1,49 @@
+@import "/src/common/colors.scss";
+
+.services-container {
+  display: flex;
+  background-color: $soft;
+  align-items: flex-start;
+  border-radius: 20px;
+  column-gap: 60px;
+
+  .texts-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50%;
+    padding: 40px;
+    border-radius: 20px;
+    row-gap: 10px;
+  }
+
+  .text-inner-container {
+    background-color: white;
+    width: 100%;
+    padding: 50px 70px;
+    border-radius: 20px;
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .nav-container {
+      display: flex;
+
+      .arrow {
+        font-size: 2rem;
+        cursor: pointer;
+      }
+      .arrow:hover {
+        color: $dark;
+      }
+    }
+  }
+  img {
+    width: 500px;
+    object-fit: contain;
+    object-position: top;
+    border-radius: 20px;
+    margin-top: 100px;
+  }
+}

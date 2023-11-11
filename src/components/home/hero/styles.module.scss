@@ -1,0 +1,44 @@
+@import "/src/common/colors.scss";
+
+.hero-container {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 30px;
+
+  .texts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 10px;
+    width: 50%;
+    .title {
+      font-size: 3rem;
+    }
+
+    .sub-title {
+      font-size: 1.5rem;
+      font-weight: 200;
+    }
+
+    .cta-button {
+      text-decoration: none;
+      color: $alien;
+      border: 3px solid $dark;
+      background-color: $dark;
+      border-radius: 25px;
+      padding: 10px;
+      width: 150px;
+      text-align: center;
+    }
+
+    .cta-button:hover {
+      background-color: $medium;
+      border-color: $medium;
+    }
+  }
+
+  img {
+    width: 50%;
+    border-radius: 20px;
+  }
+}

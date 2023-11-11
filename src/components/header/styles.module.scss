@@ -1,0 +1,114 @@
+@import "/src/common/colors.scss";
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+
+  .cta-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: $alien;
+    top: 0;
+    align-items: center;
+    padding: 10px;
+    height: 40px;
+
+    .contact-container {
+      display: flex;
+      column-gap: 20px;
+
+      .contact {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+
+        a {
+          color: $alien;
+          cursor: pointer;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .cta-button {
+      text-decoration: none;
+      color: $alien;
+      border: 3px solid $dark;
+      background-color: $dark;
+      border-radius: 25px;
+      padding: 3px;
+      width: 200px;
+      text-align: center;
+    }
+
+    .cta-button:hover {
+      background-color: $medium;
+      border-color: $medium;
+    }
+
+    .close-icon {
+      cursor: pointer;
+    }
+    .close-icon:hover {
+      color: $warning;
+    }
+  }
+
+  .logo-container {
+    text-align: center;
+    line-height: 10px;
+    margin-top: 25px;
+
+    .logo {
+      color: black;
+      text-decoration: none;
+      font-size: 1.2rem;
+      display: inline-block;
+    }
+  }
+
+  .header-nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 500px;
+      font-size: 1rem;
+
+      .nav-link {
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+        font-weight: medium;
+      }
+
+      .nav-link:hover {
+        color: $medium;
+      }
+
+      .active-nav-link {
+        text-decoration: none;
+        color: $dark;
+      }
+
+      .contact-link {
+        text-decoration: none;
+        color: black;
+        border: 3px solid $dark;
+        border-radius: 25px;
+        padding: 10px;
+      }
+      .contact-link:hover {
+        background-color: $dark;
+        color: $alien;
+      }
+    }
+  }
+}
