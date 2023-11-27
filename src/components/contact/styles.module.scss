@@ -4,7 +4,7 @@
   display: flex;
   column-gap: 60px;
   align-items: flex-start;
-  background-color: $soft;
+  background-color: white;
   border-radius: 20px;
 
   .text-outer-container {
@@ -17,7 +17,7 @@
     row-gap: 10px;
 
     .text-inner-container {
-      background-color: white;
+      background-color: $soft;
       width: 100%;
       padding: 50px 70px;
       border-radius: 20px;
