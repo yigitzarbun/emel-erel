@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 import { MdPhone, MdOutlineEmail } from "react-icons/md";
+import { FaAlignJustify } from "react-icons/fa6";
 
 import styles from "./styles.module.scss";
 import Paths from "../../routing/Paths";
@@ -46,6 +47,7 @@ const Header = () => {
           <h2>Emel L. Erel, Psy.D.</h2>
           <h6>NY and NJ licensed psychologist </h6>
         </Link>
+        <FaAlignJustify className={styles.menu} />
       </div>
       <div className={styles["header-nav-container"]}>
         <nav className={styles.nav}>

@@ -1,4 +1,5 @@
 @import "/src/common/colors.scss";
+@import "/src/common/media.scss";
 
 .footer-container {
   display: flex;
@@ -6,15 +7,43 @@
   padding: 20px;
   margin-top: 40px;
 
+  @include small-screen {
+    padding-top: 40px;
+    align-items: center;
+  }
+
+  hr {
+    border: 1px solid black;
+    width: 100%;
+    margin: 5vh 0;
+  }
   .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: start;
+    @include medium-screen {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 10vh;
+    }
+    @include small-screen {
+      flex-direction: column;
+      text-align: center;
+      row-gap: 10vh;
+    }
 
     .logo-container {
       display: flex;
       flex-direction: column;
       line-height: 1px;
+
+      @include medium-screen {
+        text-align: center;
+      }
+      @include small-screen {
+        text-align: center;
+        margin: 0 auto;
+      }
     }
 
     .nav {
@@ -22,7 +51,24 @@
       justify-content: space-between;
       row-gap: 10px;
       flex-direction: column;
+      @include medium-screen {
+        flex-direction: row;
+        column-gap: 5vw;
+        font-weight: bold;
+        flex-direction: row;
+        margin: 0 auto;
+      }
 
+      @include small-screen {
+        flex-direction: row;
+        font-weight: bold;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 70%;
+        margin: 0 auto;
+        justify-content: center;
+        column-gap: 5vw;
+      }
       a {
         color: black;
         cursor: pointer;
@@ -30,6 +76,9 @@
       }
       a:hover {
         color: $dark;
+        @include small-screen {
+          color: $dark;
+        }
       }
     }
   }
@@ -38,7 +87,15 @@
     flex-direction: column;
     column-gap: 20px;
     row-gap: 20px;
-
+    @include medium-screen {
+      flex-direction: row;
+      width: 70%;
+      margin: 0 auto;
+    }
+    @include small-screen {
+      margin: 0 auto;
+      align-items: center;
+    }
     .contact {
       display: flex;
       align-items: center;
@@ -51,6 +108,13 @@
       }
       a:hover {
         color: $dark;
+        @include small-screen {
+          color: $dark;
+        }
+      }
+      @include medium-screen {
+        text-align: center;
+        margin: 0 auto;
       }
     }
 
@@ -68,6 +132,11 @@
     .cta-button:hover {
       background-color: $medium;
       border-color: $medium;
+
+      @include small-screen {
+        border-color: $medium;
+        background-color: $medium;
+      }
     }
   }
 
@@ -76,11 +145,24 @@
     align-items: flex-start;
     address {
       width: 200px;
+      @include medium-screen {
+        width: 100%;
+        align-items: center;
+      }
+      @include small-screen {
+        width: 100%;
+      }
+    }
+
+    @include small-screen {
+      text-align: center;
+      margin: 0 auto;
     }
   }
   .copyright {
     margin-top: 50px;
     display: flex;
     justify-content: center;
+    text-align: center;
   }
 }

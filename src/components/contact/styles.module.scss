@@ -4,7 +4,7 @@
   display: flex;
   column-gap: 60px;
   align-items: flex-start;
-  background-color: white;
+  background-color: $soft;
   border-radius: 20px;
 
   .text-outer-container {
@@ -17,10 +17,11 @@
     row-gap: 10px;
 
     .text-inner-container {
-      background-color: $soft;
+      background-color: white;
       width: 100%;
       padding: 50px 70px;
       border-radius: 20px;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
       .title {
         font-size: 2rem;
@@ -63,12 +64,13 @@
           width: 100%;
 
           label {
-            font-weight: bold;
+            font-weight: normal;
           }
 
           input {
             font-family: "Poppins", sans-serif;
           }
+
           .error-field {
             color: $warning;
             font-size: 0.8rem;
@@ -80,7 +82,8 @@
           width: 60%;
           height: 30px;
           border-radius: 5px;
-          padding: 5px;
+          padding: 10px;
+          border: 1px solid black;
         }
 
         textarea {
@@ -113,5 +116,10 @@
     object-position: top;
     border-radius: 20px;
     margin-top: 100px;
+
+    width: 250px;
+    height: 400px;
+    object-fit: cover;
+    object-position: left;
   }
 }

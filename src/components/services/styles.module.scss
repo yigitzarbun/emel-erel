@@ -1,4 +1,5 @@
 @import "/src/common/colors.scss";
+@import "/src/common/media.scss";
 
 .services-container {
   display: flex;
@@ -6,7 +7,19 @@
   align-items: flex-start;
   border-radius: 20px;
   column-gap: 60px;
-
+  box-sizing: border-box;
+  @include medium-screen {
+    border-radius: 0;
+  }
+  @include small-screen {
+    flex-direction: column;
+    column-gap: 0;
+    row-gap: 20px;
+    padding: 50px 0 0;
+    flex-direction: column-reverse;
+    border-radius: 0;
+    background-color: white;
+  }
   .texts-container {
     display: flex;
     flex-direction: column;
@@ -15,6 +28,12 @@
     padding: 40px;
     border-radius: 20px;
     row-gap: 10px;
+
+    @include small-screen {
+      width: 90%;
+      padding: 0;
+      max-width: 550px;
+    }
   }
 
   .text-inner-container {
@@ -22,14 +41,24 @@
     width: 100%;
     padding: 50px 70px;
     border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
+    @include small-screen {
+      padding: 40px;
+      background-color: $soft;
+      box-sizing: border-box;
+      box-shadow: none;
+      background-color: white;
+    }
     .title {
       font-size: 2rem;
     }
 
     .nav-container {
       display: flex;
-
+      @include small-screen {
+        justify-content: center;
+      }
       .arrow {
         font-size: 2rem;
         cursor: pointer;
@@ -45,5 +74,20 @@
     object-position: top;
     border-radius: 20px;
     margin-top: 100px;
+
+    @include medium-screen {
+      width: 250px;
+      height: 400px;
+      object-fit: cover;
+      object-position: right;
+    }
+    @include small-screen {
+      width: 100%;
+      height: 50vh;
+      margin: 0 auto;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 0;
+    }
   }
 }

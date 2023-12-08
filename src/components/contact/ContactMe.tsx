@@ -71,7 +71,8 @@ const ContactMe = () => {
               <a href="tel:+4733378901">(201) 581-3395</a>
             </div>
           </div>
-
+        </div>
+        <div className={styles["text-inner-container"]}>
           <form
             onSubmit={handleSubmit(onSubmit)}
             className={styles["form-container"]}
@@ -103,7 +104,7 @@ const ContactMe = () => {
               )}
             </div>
             <div className={styles["message-container"]}>
-              <label>Leave your a message..</label>
+              <label>Leave your message..</label>
               <textarea {...register("message", { required: true })} />
               {errors.message && (
                 <span className={styles["error-field"]}>

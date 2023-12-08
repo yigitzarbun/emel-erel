@@ -8,6 +8,7 @@ import styles from "./styles.module.scss";
 const Footer = () => {
   return (
     <div className={styles["footer-container"]}>
+      <hr />
       <div className={styles["nav-container"]}>
         <div className={styles["logo-container"]}>
           <h2 className={styles.logo}>Emel L. Erel, Psy.D.</h2>

@@ -25,16 +25,18 @@ export const Hero = () => {
 
   return (
     <div className={styles["hero-container"]}>
-      <div className={styles.texts}>
-        <h1 className={styles.title}>{title}</h1>
-        <h3 className={styles["sub-title"]}>
-          Choosing a skilled and experienced psychotherapist is a crucial
-          initial step to starting one's journey towards improving the quality
-          of their emotional well-being
-        </h3>
-        <Link to={Paths.CONTACT} className={styles["cta-button"]}>
-          GET STARTED
-        </Link>
+      <div className={styles["texts-outer-container"]}>
+        <div className={styles["texts-inner-container"]}>
+          <h1 className={styles.title}>{title}</h1>
+          <h3 className={styles["sub-title"]}>
+            Choosing a skilled and experienced psychotherapist is a crucial
+            initial step to starting one's journey towards improving the quality
+            of their emotional well-being
+          </h3>
+          <Link to={Paths.CONTACT} className={styles["cta-button"]}>
+            GET STARTED
+          </Link>
+        </div>
       </div>
       <img src="/images/therapy_room_3.jpeg" alt="therapy-room" />
     </div>
