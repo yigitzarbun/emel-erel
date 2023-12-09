@@ -6,10 +6,19 @@ import { FaAlignJustify } from "react-icons/fa6";
 import styles from "./styles.module.scss";
 import Paths from "../../routing/Paths";
 import { useState } from "react";
+import MenuModal from "./menu-modal/MenuModal";
 
 const Header = () => {
   const [ctaVisible, setCtaVisible] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   const handleCta = () => {
     setCtaVisible(false);
   };
@@ -18,10 +27,7 @@ const Header = () => {
     <div className={styles["header-container"]}>
       {ctaVisible && (
         <div className={styles["cta-container"]}>
-          <p>
-            Call or email Emel L. Erel, Psy.D. now for a free 15 minute
-            consultation
-          </p>
+          <p>Call or email Emel L. Erel, Psy.D. now to book an appointment</p>
           <div className={styles["contact-container"]}>
             <div className={styles.contact}>
               <MdOutlineEmail className={styles.icon} />
@@ -41,13 +47,16 @@ const Header = () => {
           />
         </div>
       )}
+      {isModalOpen && (
+        <MenuModal isModalOpen={isModalOpen} closeModal={closeModal} />
+      )}
 
       <div className={styles["logo-container"]}>
         <Link to={Paths.HOME} className={styles.logo}>
           <h2>Emel L. Erel, Psy.D.</h2>
           <h6>NY and NJ licensed psychologist </h6>
         </Link>
-        <FaAlignJustify className={styles.menu} />
+        <FaAlignJustify className={styles.menu} onClick={handleOpenModal} />
       </div>
       <div className={styles["header-nav-container"]}>
         <nav className={styles.nav}>

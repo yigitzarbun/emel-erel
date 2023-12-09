@@ -34,7 +34,7 @@ export const Hero = () => {
             of their emotional well-being
           </h3>
           <Link to={Paths.CONTACT} className={styles["cta-button"]}>
-            GET STARTED
+            BOOK AN APPOINTMENT
           </Link>
         </div>
       </div>

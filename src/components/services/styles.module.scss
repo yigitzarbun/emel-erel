@@ -4,12 +4,13 @@
 .services-container {
   display: flex;
   background-color: $soft;
-  align-items: flex-start;
+  align-items: start;
   border-radius: 20px;
   column-gap: 60px;
   box-sizing: border-box;
   @include medium-screen {
     border-radius: 0;
+    align-items: start;
   }
   @include small-screen {
     flex-direction: column;
@@ -44,7 +45,7 @@
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
     @include small-screen {
-      padding: 40px;
+      padding: 0;
       background-color: $soft;
       box-sizing: border-box;
       box-shadow: none;
@@ -52,6 +53,9 @@
     }
     .title {
       font-size: 2rem;
+      @include small-screen {
+        text-align: center;
+      }
     }
 
     .nav-container {
@@ -83,11 +87,16 @@
     }
     @include small-screen {
       width: 100%;
-      height: 50vh;
+      height: 30vh;
       margin: 0 auto;
       object-fit: cover;
-      object-position: center;
+      object-position: bottom;
       border-radius: 0;
+    }
+  }
+  p {
+    @include small-screen {
+      text-align: center;
     }
   }
 }

@@ -33,6 +33,7 @@
       width: 90%;
       box-sizing: border-box;
       background-color: white;
+      padding: 0;
     }
     .text-inner-container {
       background-color: white;
@@ -56,7 +57,11 @@
       p {
         margin-bottom: 30px;
       }
-
+      ul {
+        @include small-screen {
+          text-align: start;
+        }
+      }
       .read-more-button {
         background-color: transparent;
         border: none;

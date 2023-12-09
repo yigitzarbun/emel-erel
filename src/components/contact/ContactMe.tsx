@@ -25,7 +25,7 @@ const ContactMe = () => {
     const templateParams = {
       from_name: formData.fname + " " + formData.lname + " " + formData.email,
       message: formData.message,
-      to_email: "yzarbun@gmail.com",
+      to_email: "emelerel@gmail.com",
     };
     try {
       emailjs

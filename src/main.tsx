@@ -8,6 +8,9 @@ import "./App.css";
 
 import Router from "./routing/Router";
 
+import Modal from "react-modal";
+
+Modal.setAppElement("#root");
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ToastContainer className="toast.container" autoClose={1000} />
