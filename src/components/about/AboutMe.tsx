@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 import styles from "./styles.module.scss";
 import Paths from "../../routing/Paths";
@@ -11,54 +12,152 @@ const AboutMe = () => {
     readMore === true ? setReadMore(false) : setReadMore(true);
   };
 
+  const [title1, setTitle1] = useState("");
+  const [text1, setText1] = useState("");
+  const [text2, setText2] = useState("");
+  const [text3, setText3] = useState("");
+  const [text4, setText4] = useState("");
+
+  const [listItem1, setListItem1] = useState("");
+  const [listItem2, setListItem2] = useState("");
+  const [listItem3, setListItem3] = useState("");
+  const [listItem4, setListItem4] = useState("");
+  const [listItem5, setListItem5] = useState("");
+  const [listItem6, setListItem6] = useState("");
+
+  const [text5, setText5] = useState("");
+  const [text6, setText6] = useState("");
+  const [text7, setText7] = useState("");
+  const [text8, setText8] = useState("");
+
+  const [buttonText, setButtonText] = useState("");
+
+  const [title2, setTitle2] = useState("");
+
+  const [education1, setEducation1] = useState("");
+  const [education2, setEducation2] = useState("");
+  const [education3, setEducation3] = useState("");
+
+  useEffect(() => {
+    const fetchTitle = async () => {
+      try {
+        const response = await axios.get(
+          `https://cdn.contentful.com/spaces/tqqtse60ni6t/entries?content_type=hero&access_token=mSdeKn1HOhTazeXKcTMSnBtkQ5cttKCuDYRq28CkiSk`
+        );
+        for (let i = 0; i < response.data.items.length; i++) {
+          if (response.data.items[i].sys.id === "SIZ43js1r70J3HU0qTfmJ") {
+            setTitle1(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "4PAfNEqsF0DLA8tNDdQ4bO"
+          ) {
+            setText1(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "3m72m79xITgXs4swWuiu3h"
+          ) {
+            setText2(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "1NxerCHfIfmGBcBMIw67Ol"
+          ) {
+            setText3(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "Q7kU8bGu1vSi5HY8qZccU"
+          ) {
+            setText4(response.data.items[i].fields.title);
+            //
+          } else if (
+            response.data.items[i].sys.id === "1puUBLiJY5EUGmESHnpyUn"
+          ) {
+            setListItem1(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "185V2ltWjQbyTwfXkYogBu"
+          ) {
+            setListItem2(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "6WkFJKamMz5ZPXNwgIiPhO"
+          ) {
+            setListItem3(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "33ISiEtBoSXaYLn2NX209x"
+          ) {
+            setListItem4(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "6zGAh3cAZt61Pt7A3DCjdu"
+          ) {
+            setListItem5(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "Up7eLvCqcSWEigYx8wB1n"
+          ) {
+            setListItem6(response.data.items[i].fields.title);
+          }
+          //
+          else if (response.data.items[i].sys.id === "2buw4og9Hvg9lm6P9HTWbG") {
+            setText5(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "5L7NZshERplcnjAs8tUAXE"
+          ) {
+            setText6(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "5MkTysH12kdMbIKGjBDCzL"
+          ) {
+            setText7(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "udWwia15v9oy4tUNcrlRN"
+          ) {
+            setText8(response.data.items[i].fields.title);
+          }
+          //
+          else if (response.data.items[i].sys.id === "UThP5yhKwG1GiUMqXr7L1") {
+            setButtonText(response.data.items[i].fields.title);
+          }
+          //
+          else if (response.data.items[i].sys.id === "2bglWj34MNTPdaOo1BLHWq") {
+            setTitle2(response.data.items[i].fields.title);
+          }
+          //
+          else if (response.data.items[i].sys.id === "1BpT6OGyBUbM18MWvs5jwo") {
+            setEducation1(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "1kTgaja4wFsHmCqLIvbmAt"
+          ) {
+            setEducation2(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "48d0c96eJCXnqRWIyjHIXl"
+          ) {
+            setEducation3(response.data.items[i].fields.title);
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching blog posts:", error);
+      }
+    };
+    fetchTitle();
+  }, []);
+
   return (
     <div className={styles["home-about-container"]}>
       <div className={styles["text-outer-container"]}>
         <div className={styles["text-inner-container"]}>
-          <h3 className={styles.title}>Hi! I'm Emel,</h3>
+          <h3 className={styles.title}>{title1}</h3>
+          <p>{text1}</p>
           <p>
-            I am a NY and NJ licensed psychologist with 15+ years of clinical
-            experience in treating adults of all ages and adolescents (14 years
-            old and up) struggling with various emotional difficulties.{" "}
-          </p>
-          <p>
-            Throughout my career in Psychology, I have worked in various
-            settings including inpatient and outpatient clinics, schools, and
-            residential facilities providing individual, group, and family
-            therapies, and psychological assessments. These experiences not only
-            allowed me to serve diverse populations who were in need of
-            comprehensive services but also prepared me to understand a range of
-            psychological difficulties and the intertwine of body-mind as well
-            as race, sex, culture.
+            {text2} {text3}
           </p>
           {readMore && (
             <>
               <p>
-                Today, I maintain a full-time private practice serving
-                Adolescents, Adults, Families and Couples from diverse ethnic
-                and religious backgrounds struggling with a wide range of
-                emotional difficulties including
-                immigration/acculturation/adaptation issues, early traumatic
-                experiences, sexual trauma, attachments disorders, relationship
-                problems within family and at work, self-esteem issues, anxiety,
-                depression, infertility, post-partum depression, loss, and
-                grief. I believe I am effective in developing strong working
-                alliances with my patients so that therapy experience can lead
-                to emotional growth and change. In fact, the process of building
-                a unique relationship and creating a new experience together
-                with my patients, making a change in their lives is what makes
-                this work rewarding for me.
+                {text4}
+                <ul>
+                  <li>{listItem1}</li>
+                  <li>{listItem2}</li>
+                  <li>{listItem3}</li>
+                  <li>{listItem4}</li>
+                  <li>{listItem5}</li>
+                  <li>{listItem6}</li>
+                </ul>
+                {text5} {text6}
               </p>
-              <p>
-                Besides having an active practice, I also enjoy supervising
-                psychology students and serve as an Adjunct Clinical Supervisor
-                for the Pace University in New York.
-              </p>
-              <p>
-                Passionate about the work I do, I also constantly work towards
-                developing and strengthening my clinical skills through
-                attending workshops, seminars, classes and supervision groups.
-              </p>
+              <p>{text7}</p>
+              <p>{text8}</p>
             </>
           )}
           <button
@@ -68,23 +167,15 @@ const AboutMe = () => {
             {readMore === true ? "Read Less" : "Read More"}
           </button>
           <Link to={Paths.CONTACT} className={styles["cta-button"]}>
-            BOOK AN APPOINTMENT
+            {buttonText}
           </Link>
         </div>
         <div className={styles["text-inner-container"]}>
-          <h3 className={styles.title}>Education</h3>
+          <h3 className={styles.title}>{title2}</h3>
           <ul>
-            <li>
-              Ferkauf Graduate School of Psychology, Psy.D. in Clinical
-              Psychology
-            </li>
-            <li>
-              Teachers College, Columbia University, Ed.M in School Psychology
-            </li>
-            <li>
-              Bogazici University, B.A. Double Major in Psychology and
-              Counseling
-            </li>
+            <li>{education1}</li>
+            <li>{education2}</li>
+            <li>{education3}</li>
           </ul>
         </div>
       </div>

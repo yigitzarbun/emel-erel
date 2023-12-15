@@ -1,26 +1,40 @@
 import { Link } from "react-router-dom";
-
-import styles from "./styles.module.scss";
-import Paths from "../../../routing/Paths";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+import styles from "./styles.module.scss";
+import Paths from "../../../routing/Paths";
+
 export const Hero = () => {
   const [title, setTitle] = useState("");
+  const [text, setText] = useState("");
+  const [buttonText, setButtonText] = useState("");
   useEffect(() => {
-    const fetchBlogPosts = async () => {
+    const fetchTitle = async () => {
       try {
         const response = await axios.get(
-          `https://cdn.contentful.com/spaces/tqqtse60ni6t/entries/2nQ1Ms6DL4HJRyDjFgliCM?access_token=mSdeKn1HOhTazeXKcTMSnBtkQ5cttKCuDYRq28CkiSk`
+          `https://cdn.contentful.com/spaces/tqqtse60ni6t/entries?content_type=hero&access_token=mSdeKn1HOhTazeXKcTMSnBtkQ5cttKCuDYRq28CkiSk
+`
         );
-        console.log(response);
-        setTitle(response.data.fields.title);
+        for (let i = 0; i < response.data.items.length; i++) {
+          if (response.data.items[i].sys.id === "2nQ1Ms6DL4HJRyDjFgliCM") {
+            setTitle(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "1DDjqJBArKO4PnDr6NojTF"
+          ) {
+            setText(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "UThP5yhKwG1GiUMqXr7L1"
+          ) {
+            setButtonText(response.data.items[i].fields.title);
+          }
+        }
       } catch (error) {
         console.error("Error fetching blog posts:", error);
       }
     };
 
-    fetchBlogPosts();
+    fetchTitle();
   }, []);
 
   return (
@@ -28,13 +42,9 @@ export const Hero = () => {
       <div className={styles["texts-outer-container"]}>
         <div className={styles["texts-inner-container"]}>
           <h1 className={styles.title}>{title}</h1>
-          <h3 className={styles["sub-title"]}>
-            Choosing a skilled and experienced psychotherapist is a crucial
-            initial step to starting one's journey towards improving the quality
-            of their emotional well-being
-          </h3>
+          <h3 className={styles["sub-title"]}>{text}</h3>
           <Link to={Paths.CONTACT} className={styles["cta-button"]}>
-            BOOK AN APPOINTMENT
+            {buttonText}
           </Link>
         </div>
       </div>

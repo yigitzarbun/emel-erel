@@ -1,6 +1,8 @@
 import { MdPhone, MdOutlineEmail } from "react-icons/md";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { toast } from "react-toastify";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 import emailjs from "@emailjs/browser";
 
@@ -49,26 +51,61 @@ const ContactMe = () => {
     }
   };
 
+  const [title, setTitle] = useState("");
+  const [text1, setText1] = useState("");
+  const [text2, setText2] = useState("");
+  const [contactEmail, setContactEmail] = useState("");
+  const [contactPhone, setContactPhone] = useState("");
+
+  useEffect(() => {
+    const fetchTitle = async () => {
+      try {
+        const response = await axios.get(
+          `https://cdn.contentful.com/spaces/tqqtse60ni6t/entries?content_type=hero&access_token=mSdeKn1HOhTazeXKcTMSnBtkQ5cttKCuDYRq28CkiSk`
+        );
+        for (let i = 0; i < response.data.items.length; i++) {
+          if (response.data.items[i].sys.id === "1KKIexbi6NrrDfmgKtFq2S") {
+            setTitle(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "3cmYOsNdZam4BOPPjiVSlX"
+          ) {
+            setText1(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "6urRY5zUud6iVrMjbRi0LZ"
+          ) {
+            setText2(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "1MBGunnQTjzOJ2JjdHUROS"
+          ) {
+            setContactEmail(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "1D069TJl77vWKSkxHT1Owc"
+          ) {
+            setContactPhone(response.data.items[i].fields.title);
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching blog posts:", error);
+      }
+    };
+    fetchTitle();
+  }, []);
   return (
     <div className={styles["home-contact-container"]}>
       <div className={styles["text-outer-container"]}>
         <div className={styles["text-inner-container"]}>
-          <h3 className={styles.title}>Contact Me</h3>
+          <h3 className={styles.title}>{title}</h3>
           <p>
-            I believe choosing a skilled and an experienced psychotherapist is a
-            crucial initial step prior to starting one’s journey towards
-            improving the quality of their emotional well-being. So, please take
-            the time to explore my website and feel free to contact me with any
-            questions.
+            {text1} {text2}
           </p>
           <div className={styles["contact-container"]}>
             <div className={styles.contact}>
               <MdOutlineEmail />
-              <a href="mailto: emelerel@gmail.com">emelerel@gmail.com</a>
+              <a href="mailto: emelerel@gmail.com">{contactEmail}</a>
             </div>
             <div className={styles.contact}>
               <MdPhone />
-              <a href="tel:+4733378901">(201) 581-3395</a>
+              <a href="tel:+4733378901">{contactPhone}</a>
             </div>
           </div>
         </div>

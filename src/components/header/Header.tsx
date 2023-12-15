@@ -2,11 +2,12 @@ import { Link, NavLink } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 import { MdPhone, MdOutlineEmail } from "react-icons/md";
 import { FaAlignJustify } from "react-icons/fa6";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import MenuModal from "./menu-modal/MenuModal";
 
 import styles from "./styles.module.scss";
 import Paths from "../../routing/Paths";
-import { useState } from "react";
-import MenuModal from "./menu-modal/MenuModal";
 
 const Header = () => {
   const [ctaVisible, setCtaVisible] = useState(true);
@@ -23,23 +24,57 @@ const Header = () => {
     setCtaVisible(false);
   };
 
+  const [ctaText, setCtaText] = useState("");
+  const [contactEmail, setContactEmail] = useState("");
+  const [contactPhone, setContactPhone] = useState("");
+  const [buttonText, setButtonText] = useState("");
+
+  useEffect(() => {
+    const fetchTitle = async () => {
+      try {
+        const response = await axios.get(
+          `https://cdn.contentful.com/spaces/tqqtse60ni6t/entries?content_type=hero&access_token=mSdeKn1HOhTazeXKcTMSnBtkQ5cttKCuDYRq28CkiSk`
+        );
+        for (let i = 0; i < response.data.items.length; i++) {
+          if (response.data.items[i].sys.id === "4S8lJMrnvyyeffG2whtlQP") {
+            setCtaText(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "1MBGunnQTjzOJ2JjdHUROS"
+          ) {
+            setContactEmail(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "1D069TJl77vWKSkxHT1Owc"
+          ) {
+            setContactPhone(response.data.items[i].fields.title);
+          } else if (
+            response.data.items[i].sys.id === "UThP5yhKwG1GiUMqXr7L1"
+          ) {
+            setButtonText(response.data.items[i].fields.title);
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching blog posts:", error);
+      }
+    };
+    fetchTitle();
+  }, []);
   return (
     <div className={styles["header-container"]}>
       {ctaVisible && (
         <div className={styles["cta-container"]}>
-          <p>Call or email Emel L. Erel, Psy.D. now to book an appointment</p>
+          <p>{ctaText}</p>
           <div className={styles["contact-container"]}>
             <div className={styles.contact}>
               <MdOutlineEmail className={styles.icon} />
-              <a href="mailto: emelerel@gmail.com">emelerel@gmail.com</a>
+              <a href="mailto: emelerel@gmail.com">{contactEmail}</a>
             </div>
             <div className={styles.contact}>
               <MdPhone className={styles.icon} />
-              <a href="tel:+4733378901">(201) 581-3395</a>
+              <a href="tel:+4733378901">{contactPhone}</a>
             </div>
           </div>
           <Link to={Paths.CONTACT} className={styles["cta-button"]}>
-            BOOK AN APPOINTMENT
+            {buttonText}
           </Link>
           <AiOutlineClose
             onClick={handleCta}
