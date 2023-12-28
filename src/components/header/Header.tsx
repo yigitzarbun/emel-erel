@@ -90,21 +90,12 @@ const Header = () => {
         <Link to={Paths.HOME} className={styles.logo}>
           <h2>Emel L. Erel, Psy.D.</h2>
           <h6>NY and NJ licensed psychologist </h6>
+          <h5>PSYCHOTHERAPY FOR ADULTS, ADOLESCENTS AND COUPLES</h5>
         </Link>
         <FaAlignJustify className={styles.menu} onClick={handleOpenModal} />
       </div>
       <div className={styles["header-nav-container"]}>
         <nav className={styles.nav}>
-          <NavLink
-            to={Paths.HOME}
-            className={({ isActive }) =>
-              isActive
-                ? `${styles["active-nav-link"]}`
-                : `${styles["nav-link"]}`
-            }
-          >
-            HOME
-          </NavLink>
           <NavLink
             to={Paths.ABOUT}
             className={({ isActive }) =>
@@ -116,14 +107,14 @@ const Header = () => {
             ABOUT
           </NavLink>
           <NavLink
-            to={Paths.ORIENTATION}
+            to={Paths.PHILOSOPHY}
             className={({ isActive }) =>
               isActive
                 ? `${styles["active-nav-link"]}`
                 : `${styles["nav-link"]}`
             }
           >
-            ORIENTATION
+            PHILOSOPHY
           </NavLink>
           <NavLink
             to={Paths.SERVICES}
@@ -134,6 +125,36 @@ const Header = () => {
             }
           >
             SERVICES
+          </NavLink>
+          <NavLink
+            to={Paths.EDUCATION}
+            className={({ isActive }) =>
+              isActive
+                ? `${styles["active-nav-link"]}`
+                : `${styles["nav-link"]}`
+            }
+          >
+            EDUCATION
+          </NavLink>
+          <NavLink
+            to={Paths.SPECIALIZATIONS}
+            className={({ isActive }) =>
+              isActive
+                ? `${styles["active-nav-link"]}`
+                : `${styles["nav-link"]}`
+            }
+          >
+            SPECIALIZATIONS
+          </NavLink>
+          <NavLink
+            to={Paths.PRACTICE_INFO}
+            className={({ isActive }) =>
+              isActive
+                ? `${styles["active-nav-link"]}`
+                : `${styles["nav-link"]}`
+            }
+          >
+            PRACTICE INFO
           </NavLink>
           <NavLink to={Paths.CONTACT} className={styles["contact-link"]}>
             CONTACT

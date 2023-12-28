@@ -20,7 +20,6 @@ const MenuModal = ({ isModalOpen, closeModal }: MenuModalProps) => {
     navigate(Paths[value]);
     closeModal();
   };
-  console.log(isModalOpen);
   return (
     <Modal
       isOpen={isModalOpen}
@@ -36,7 +35,7 @@ const MenuModal = ({ isModalOpen, closeModal }: MenuModalProps) => {
             isActive ? `${styles["active-nav-link"]}` : `${styles["nav-link"]}`
           }
         >
-          Home
+          HOME
         </NavLink>
         <NavLink
           to={Paths.ABOUT}
@@ -45,7 +44,16 @@ const MenuModal = ({ isModalOpen, closeModal }: MenuModalProps) => {
             isActive ? `${styles["active-nav-link"]}` : `${styles["nav-link"]}`
           }
         >
-          About
+          ABOUT
+        </NavLink>
+        <NavLink
+          to={Paths.PHILOSOPHY}
+          onClick={() => handleNavigate("PHILOSOPHY")}
+          className={({ isActive }) =>
+            isActive ? `${styles["active-nav-link"]}` : `${styles["nav-link"]}`
+          }
+        >
+          PHILOSOPHY
         </NavLink>
         <NavLink
           to={Paths.SERVICES}
@@ -54,16 +62,34 @@ const MenuModal = ({ isModalOpen, closeModal }: MenuModalProps) => {
             isActive ? `${styles["active-nav-link"]}` : `${styles["nav-link"]}`
           }
         >
-          Services
+          SERVICES
         </NavLink>
         <NavLink
-          to={Paths.ORIENTATION}
-          onClick={() => handleNavigate("ORIENTATION")}
+          to={Paths.EDUCATION}
+          onClick={() => handleNavigate("EDUCATION")}
           className={({ isActive }) =>
             isActive ? `${styles["active-nav-link"]}` : `${styles["nav-link"]}`
           }
         >
-          Orientation
+          EDUCATION
+        </NavLink>
+        <NavLink
+          to={Paths.SPECIALIZATIONS}
+          onClick={() => handleNavigate("SPECIALIZATIONS")}
+          className={({ isActive }) =>
+            isActive ? `${styles["active-nav-link"]}` : `${styles["nav-link"]}`
+          }
+        >
+          SPECIALIZATIONS
+        </NavLink>
+        <NavLink
+          to={Paths.PRACTICE_INFO}
+          onClick={() => handleNavigate("PRACTICE_INFO")}
+          className={({ isActive }) =>
+            isActive ? `${styles["active-nav-link"]}` : `${styles["nav-link"]}`
+          }
+        >
+          PRACTICE INFO
         </NavLink>
         <NavLink
           to={Paths.CONTACT}
@@ -72,7 +98,7 @@ const MenuModal = ({ isModalOpen, closeModal }: MenuModalProps) => {
             isActive ? `${styles["active-nav-link"]}` : `${styles["nav-link"]}`
           }
         >
-          Contact
+          CONTACT
         </NavLink>
       </nav>
     </Modal>

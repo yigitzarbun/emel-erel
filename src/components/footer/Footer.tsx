@@ -10,22 +10,30 @@ const Footer = () => {
     <div className={styles["footer-container"]}>
       <hr />
       <div className={styles["nav-container"]}>
-        <div className={styles["logo-container"]}>
-          <h2 className={styles.logo}>Emel L. Erel, Psy.D.</h2>
-          <p>NY and NJ licensed psychologist</p>
-        </div>
+        <Link to={Paths.HOME} className={styles["logo-container"]}>
+          <div>
+            <h2 className={styles.logo}>Emel L. Erel, Psy.D.</h2>
+            <p>NY and NJ licensed psychologist</p>
+          </div>
+        </Link>
         <nav className={styles.nav}>
-          <Link to={Paths.HOME} className={styles.link}>
-            HOME
-          </Link>
           <Link to={Paths.ABOUT} className={styles.link}>
             ABOUT
           </Link>
-          <Link to={Paths.ORIENTATION} className={styles.link}>
-            ORIENTATION
+          <Link to={Paths.PHILOSOPHY} className={styles.link}>
+            PHILOSOPHY
           </Link>
           <Link to={Paths.SERVICES} className={styles.link}>
             SERVICES
+          </Link>
+          <Link to={Paths.EDUCATION} className={styles.link}>
+            EDUCATION
+          </Link>
+          <Link to={Paths.SPECIALIZATIONS} className={styles.link}>
+            SPECIALIZATIONS
+          </Link>
+          <Link to={Paths.PRACTICE_INFO} className={styles.link}>
+            PRACTICE INFO
           </Link>
           <Link to={Paths.CONTACT} className={styles.link}>
             CONTACT

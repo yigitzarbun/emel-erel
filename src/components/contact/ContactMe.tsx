@@ -51,9 +51,6 @@ const ContactMe = () => {
     }
   };
 
-  const [title, setTitle] = useState("");
-  const [text1, setText1] = useState("");
-  const [text2, setText2] = useState("");
   const [contactEmail, setContactEmail] = useState("");
   const [contactPhone, setContactPhone] = useState("");
 
@@ -64,19 +61,7 @@ const ContactMe = () => {
           `https://cdn.contentful.com/spaces/tqqtse60ni6t/entries?content_type=hero&access_token=mSdeKn1HOhTazeXKcTMSnBtkQ5cttKCuDYRq28CkiSk`
         );
         for (let i = 0; i < response.data.items.length; i++) {
-          if (response.data.items[i].sys.id === "1KKIexbi6NrrDfmgKtFq2S") {
-            setTitle(response.data.items[i].fields.title);
-          } else if (
-            response.data.items[i].sys.id === "3cmYOsNdZam4BOPPjiVSlX"
-          ) {
-            setText1(response.data.items[i].fields.title);
-          } else if (
-            response.data.items[i].sys.id === "6urRY5zUud6iVrMjbRi0LZ"
-          ) {
-            setText2(response.data.items[i].fields.title);
-          } else if (
-            response.data.items[i].sys.id === "1MBGunnQTjzOJ2JjdHUROS"
-          ) {
+          if (response.data.items[i].sys.id === "1MBGunnQTjzOJ2JjdHUROS") {
             setContactEmail(response.data.items[i].fields.title);
           } else if (
             response.data.items[i].sys.id === "1D069TJl77vWKSkxHT1Owc"
@@ -94,9 +79,10 @@ const ContactMe = () => {
     <div className={styles["home-contact-container"]}>
       <div className={styles["text-outer-container"]}>
         <div className={styles["text-inner-container"]}>
-          <h3 className={styles.title}>{title}</h3>
+          <h3 className={styles.title}>Contact Me</h3>
           <p>
-            {text1} {text2}
+            To schedule an appointment or to obtain additional information
+            please call or email me:
           </p>
           <div className={styles["contact-container"]}>
             <div className={styles.contact}>
@@ -108,6 +94,10 @@ const ContactMe = () => {
               <a href="tel:+4733378901">{contactPhone}</a>
             </div>
           </div>
+          <h5>
+            **Please DO NOT include confidential or private information
+            regarding your health condition in your messages.
+          </h5>
         </div>
         <div className={styles["text-inner-container"]}>
           <form

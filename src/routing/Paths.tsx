@@ -7,5 +7,8 @@ export default {
   ABOUT: "/about",
   CONTACT: "/contact",
   SERVICES: "/services",
-  ORIENTATION: "/orientation",
+  PHILOSOPHY: "/philosophy",
+  EDUCATION: "/educational-background",
+  SPECIALIZATIONS: "/specializations",
+  PRACTICE_INFO: "/practice-info",
 } as Paths;

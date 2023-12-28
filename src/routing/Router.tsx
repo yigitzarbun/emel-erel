@@ -9,7 +9,14 @@ import Paths from "./Paths";
 const Home = lazy(() => import("../modules/home/Home"));
 const About = lazy(() => import("../modules/about/About"));
 const Services = lazy(() => import("../modules/services/Services"));
-const Orientation = lazy(() => import("../modules/orientation/Orientation"));
+const Philosophy = lazy(() => import("../modules/philosophy/Philosophy"));
+const Education = lazy(() => import("../modules/education/Education"));
+const Specializations = lazy(
+  () => import("../modules/specializations/Specializations")
+);
+const PracticeInfo = lazy(
+  () => import("../modules/practice-info/PracticeInfo")
+);
 const Contact = lazy(() => import("../modules/contact/Contact"));
 
 const getRouteElement = (Component: React.ElementType): React.ReactNode => (
@@ -24,7 +31,10 @@ const routes: RouteObject[] = [
   { path: Paths.HOME, element: getRouteElement(Home) },
   { path: Paths.ABOUT, element: getRouteElement(About) },
   { path: Paths.SERVICES, element: getRouteElement(Services) },
-  { path: Paths.ORIENTATION, element: getRouteElement(Orientation) },
+  { path: Paths.PHILOSOPHY, element: getRouteElement(Philosophy) },
+  { path: Paths.EDUCATION, element: getRouteElement(Education) },
+  { path: Paths.SPECIALIZATIONS, element: getRouteElement(Specializations) },
+  { path: Paths.PRACTICE_INFO, element: getRouteElement(PracticeInfo) },
   { path: Paths.CONTACT, element: getRouteElement(Contact) },
 ];
 

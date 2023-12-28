@@ -32,8 +32,8 @@
 
     @include small-screen {
       width: 90%;
-      padding: 0;
-      max-width: 550px;
+      padding: 0 20px;
+      max-width: 870px;
       margin: 0 auto;
     }
   }
@@ -56,30 +56,6 @@
       font-size: 2rem;
       @include small-screen {
         text-align: center;
-      }
-    }
-    .page {
-      color: $dark;
-      text-align: right;
-      @include small-screen {
-        margin: 0 auto;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-      }
-    }
-    .nav-container {
-      display: flex;
-      justify-content: end;
-      @include small-screen {
-        justify-content: center;
-      }
-      .arrow {
-        font-size: 2rem;
-        cursor: pointer;
-      }
-      .arrow:hover {
-        color: $dark;
       }
     }
   }
