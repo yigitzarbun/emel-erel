@@ -5,7 +5,7 @@ const AboutMe = () => {
     <div className={styles["home-about-container"]}>
       <div className={styles["text-outer-container"]}>
         <div className={styles["text-inner-container"]}>
-          <h3 className={styles.title}>Hi! I'm Emel,</h3>
+          <h3 className={styles.title}>About Me</h3>
           <p>
             I am a bilingual in Turkish-English, NY and NJ licensed Clinical
             Psychologist for over 15 years of clinical experience in working

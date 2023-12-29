@@ -79,7 +79,7 @@ const ContactMe = () => {
     <div className={styles["home-contact-container"]}>
       <div className={styles["text-outer-container"]}>
         <div className={styles["text-inner-container"]}>
-          <h3 className={styles.title}>Contact Me</h3>
+          <h3 className={styles.title}>Contact Info</h3>
           <p>
             To schedule an appointment or to obtain additional information
             please call or email me:
@@ -91,8 +91,14 @@ const ContactMe = () => {
             </div>
             <div className={styles.contact}>
               <MdPhone />
-              <a href="tel:+4733378901">{contactPhone}</a>
+              <a href="tel:+6463266814">{contactPhone}</a>
             </div>
+          </div>
+          <div className={styles.office}>
+            <h4>Office Address:</h4>
+            <address>
+              306 Washington Street, Suite 1207 Hoboken, NJ 07030
+            </address>
           </div>
           <h5>
             **Please DO NOT include confidential or private information

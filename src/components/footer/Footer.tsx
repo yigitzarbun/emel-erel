@@ -46,7 +46,7 @@ const Footer = () => {
           </div>
           <div className={styles.contact}>
             <MdPhone />
-            <a href="tel:+4733378901">(201) 581-3395</a>
+            <a href="tel:+6463266814">(201) 581-3395</a>
           </div>
           <Link to={Paths.CONTACT} className={styles["cta-button"]}>
             BOOK AN APPOINTMENT

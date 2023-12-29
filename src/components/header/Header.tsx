@@ -70,7 +70,7 @@ const Header = () => {
             </div>
             <div className={styles.contact}>
               <MdPhone className={styles.icon} />
-              <a href="tel:+4733378901">{contactPhone}</a>
+              <a href="tel:+6463266814">{contactPhone}</a>
             </div>
           </div>
           <Link to={Paths.CONTACT} className={styles["cta-button"]}>
@@ -89,7 +89,7 @@ const Header = () => {
       <div className={styles["logo-container"]}>
         <Link to={Paths.HOME} className={styles.logo}>
           <h2>Emel L. Erel, Psy.D.</h2>
-          <h6>NY and NJ licensed psychologist </h6>
+          <h6>NY and NJ Licensed Psychologist </h6>
           <h5>PSYCHOTHERAPY FOR ADULTS, ADOLESCENTS AND COUPLES</h5>
         </Link>
         <FaAlignJustify className={styles.menu} onClick={handleOpenModal} />
