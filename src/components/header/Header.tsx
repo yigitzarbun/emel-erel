@@ -5,7 +5,6 @@ import { FaAlignJustify } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import MenuModal from "./menu-modal/MenuModal";
-
 import styles from "./styles.module.scss";
 import Paths from "../../routing/Paths";
 
@@ -27,13 +26,13 @@ const Header = () => {
   const [ctaText, setCtaText] = useState("");
   const [contactEmail, setContactEmail] = useState("");
   const [contactPhone, setContactPhone] = useState("");
-  const [buttonText, setButtonText] = useState("");
+  const contentfulToken = import.meta.env.VITE_REACT_APP_CONTENTFUL_TOKEN;
 
   useEffect(() => {
     const fetchTitle = async () => {
       try {
         const response = await axios.get(
-          `https://cdn.contentful.com/spaces/tqqtse60ni6t/entries?content_type=hero&access_token=mSdeKn1HOhTazeXKcTMSnBtkQ5cttKCuDYRq28CkiSk`
+          `https://cdn.contentful.com/spaces/tqqtse60ni6t/entries?content_type=hero&access_token=${contentfulToken}`
         );
         for (let i = 0; i < response.data.items.length; i++) {
           if (response.data.items[i].sys.id === "4S8lJMrnvyyeffG2whtlQP") {
@@ -46,10 +45,6 @@ const Header = () => {
             response.data.items[i].sys.id === "1D069TJl77vWKSkxHT1Owc"
           ) {
             setContactPhone(response.data.items[i].fields.title);
-          } else if (
-            response.data.items[i].sys.id === "UThP5yhKwG1GiUMqXr7L1"
-          ) {
-            setButtonText(response.data.items[i].fields.title);
           }
         }
       } catch (error) {
@@ -66,15 +61,15 @@ const Header = () => {
           <div className={styles["contact-container"]}>
             <div className={styles.contact}>
               <MdOutlineEmail className={styles.icon} />
-              <a href="mailto: emelerel@gmail.com">{contactEmail}</a>
+              <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
             </div>
             <div className={styles.contact}>
               <MdPhone className={styles.icon} />
-              <a href="tel:+6463266814">{contactPhone}</a>
+              <a href={`tel:${contactPhone}`}>{contactPhone}</a>
             </div>
           </div>
           <Link to={Paths.CONTACT} className={styles["cta-button"]}>
-            {buttonText}
+            CONTACT ME
           </Link>
           <AiOutlineClose
             onClick={handleCta}

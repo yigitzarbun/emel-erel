@@ -25,7 +25,7 @@ const MyEducation = () => {
           </ul>
         </div>
       </div>
-      <img src="/images/therapy_room_2.jpeg" />
+      <img src="/images/img1.jpg" />
     </div>
   );
 };

@@ -67,7 +67,7 @@ const MySpecializations = () => {
           </ul>
         </div>
       </div>
-      <img src="/images/therapy_room.jpeg" />
+      <img src="/images/img3.jpg" />
     </div>
   );
 };

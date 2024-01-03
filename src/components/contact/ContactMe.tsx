@@ -16,6 +16,12 @@ type FormValues = {
 };
 
 const ContactMe = () => {
+  const contentfulToken = import.meta.env.VITE_REACT_APP_CONTENTFUL_TOKEN;
+  const viteEmailId = import.meta.env.VITE_REACT_APP_EMAILJS_SERVICE_ID;
+  const viteTemplateId = import.meta.env.VITE_REACT_APP_EMAILJS_TEMPLATE_ID;
+  const viteApiKey = import.meta.env.VITE_REACT_APP_EMAILJS_API_KEY;
+  const [contactEmail, setContactEmail] = useState("");
+  const [contactPhone, setContactPhone] = useState("");
   const {
     register,
     handleSubmit,
@@ -27,16 +33,11 @@ const ContactMe = () => {
     const templateParams = {
       from_name: formData.fname + " " + formData.lname + " " + formData.email,
       message: formData.message,
-      to_email: "emelerel@gmail.com",
+      to_email: contactEmail,
     };
     try {
       emailjs
-        .send(
-          "service_gugc9om",
-          "template_mn0e4ld",
-          templateParams,
-          "vR-TZXFb4CC3SnQKa"
-        )
+        .send(viteEmailId, viteTemplateId, templateParams, viteApiKey)
         .then(
           () => {
             toast.success("Form submitted");
@@ -51,14 +52,11 @@ const ContactMe = () => {
     }
   };
 
-  const [contactEmail, setContactEmail] = useState("");
-  const [contactPhone, setContactPhone] = useState("");
-
   useEffect(() => {
     const fetchTitle = async () => {
       try {
         const response = await axios.get(
-          `https://cdn.contentful.com/spaces/tqqtse60ni6t/entries?content_type=hero&access_token=mSdeKn1HOhTazeXKcTMSnBtkQ5cttKCuDYRq28CkiSk`
+          `https://cdn.contentful.com/spaces/tqqtse60ni6t/entries?content_type=hero&access_token=${contentfulToken}`
         );
         for (let i = 0; i < response.data.items.length; i++) {
           if (response.data.items[i].sys.id === "1MBGunnQTjzOJ2JjdHUROS") {
@@ -87,15 +85,15 @@ const ContactMe = () => {
           <div className={styles["contact-container"]}>
             <div className={styles.contact}>
               <MdOutlineEmail />
-              <a href="mailto: emelerel@gmail.com">{contactEmail}</a>
+              <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
             </div>
             <div className={styles.contact}>
               <MdPhone />
-              <a href="tel:+6463266814">{contactPhone}</a>
+              <a href={`tel:${contactPhone}`}>{contactPhone}</a>
             </div>
           </div>
           <div className={styles.office}>
-            <h4>Office Address:</h4>
+            <h3>Office Address:</h3>
             <address>
               306 Washington Street, Suite 1207 Hoboken, NJ 07030
             </address>
