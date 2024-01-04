@@ -16,7 +16,7 @@ type FormValues = {
 };
 
 const ContactMe = () => {
-  const contentfulToken = process.env.VITE_REACT_APP_CONTENTFUL_TOKEN;
+  const contentfulToken = import.meta.env.VITE_REACT_APP_CONTENTFUL_TOKEN;
   const viteEmailId = import.meta.env.VITE_REACT_APP_EMAILJS_SERVICE_ID;
   const viteTemplateId = import.meta.env.VITE_REACT_APP_EMAILJS_TEMPLATE_ID;
   const viteApiKey = import.meta.env.VITE_REACT_APP_EMAILJS_API_KEY;
