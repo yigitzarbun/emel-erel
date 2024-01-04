@@ -83,7 +83,7 @@ const MyPracticeInfo = () => {
           </p>
         </div>
       </div>
-      <img src="/images/img4.jpg" />
+      <img src="/images/nature.jpeg" alt="nature-picture" />
     </div>
   );
 };

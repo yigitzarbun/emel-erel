@@ -86,7 +86,7 @@ export const MyServices = () => {
           <p className={styles.page}>Showing page {page} of 3</p>
         </div>
       </div>
-      <img src="/images/therapy_room.jpeg" />
+      <img src="/images/therapy_room.jpeg" alt="therapy-room-picture" />
     </div>
   );
 };

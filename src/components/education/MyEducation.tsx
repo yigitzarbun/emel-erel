@@ -25,7 +25,7 @@ const MyEducation = () => {
           </ul>
         </div>
       </div>
-      <img src="/images/img1.jpg" />
+      <img src="/images/img1.jpg" alt="abstract-painting" />
     </div>
   );
 };

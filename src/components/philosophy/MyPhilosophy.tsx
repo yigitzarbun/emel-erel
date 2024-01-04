@@ -36,8 +36,8 @@ const MyPhilosophy = () => {
         </div>
       </div>
       <img
-        src="/images/nature.jpeg"
-        alt="emel-erel-profile-picutre"
+        src="/images/img4.jpg"
+        alt="abstract-picutre"
         className={styles["profile-picture"]}
       />
     </div>

@@ -151,7 +151,7 @@ const ContactMe = () => {
       </div>
       <img
         src="/images/therapy_room_2.jpeg"
-        alt="emel-erel-profile-picutre"
+        alt="emel-erel-therapy-room-picutre"
         className={styles["profile-picture"]}
       />
     </div>

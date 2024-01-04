@@ -67,7 +67,7 @@ const MySpecializations = () => {
           </ul>
         </div>
       </div>
-      <img src="/images/img3.jpg" />
+      <img src="/images/img3.jpg" alt="abstract-picture" />
     </div>
   );
 };
