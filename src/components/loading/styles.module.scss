@@ -1,3 +1,15 @@
+@import "/src/common/colors.scss";
+
 .main-container {
-  margin: auto;
+  position: relative;
+  width: 60vw;
+  max-width: 300px;
+  margin: 0 auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid $soft;
+  background-color: $soft;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
