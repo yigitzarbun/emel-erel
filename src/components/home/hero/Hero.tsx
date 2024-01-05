@@ -9,18 +9,18 @@ export const Hero = () => {
       <div className={styles["texts-outer-container"]}>
         <div className={styles["texts-inner-container"]}>
           <h1 className={styles.title}>Welcome!</h1>
-          <h3 className={styles["sub-title"]}>
+          <p className={styles["sub-title"]}>
             Thank you for taking the time to visit my website. Here, you will
             find some information about my practice, qualifications, clinical
             experience and areas of specialization.
-          </h3>
-          <h3 className={styles["sub-title"]}>
+          </p>
+          <p className={styles["sub-title"]}>
             I believe choosing a skilled and an experienced psychotherapist is a
             crucial initial step prior to starting one’s journey towards
             improving the quality of their emotional well-being. So, please take
             the time to explore my website and feel free to contact me with any
             questions.
-          </h3>
+          </p>
           <Link to={Paths.CONTACT} className={styles["cta-button"]}>
             CONTACT ME
           </Link>

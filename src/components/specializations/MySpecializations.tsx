@@ -23,7 +23,7 @@ const MySpecializations = () => {
             though it makes them unhappy. As a result, couples therapy can open
             up new ways of thinking about each other and the relationship...
           </p>
-          <h4>Issues that I work with include:</h4>
+          <h4 className={styles.subtitle}>Issues that I work with include:</h4>
           <ul>
             <li>communication difficulties, disagreements</li>
             <li>feeling “stuck” with patterns of behavior</li>
@@ -55,7 +55,7 @@ const MySpecializations = () => {
             assessment and treatment of PMADs is critical to optimal
             developmental and psychological functioning of the whole family.
           </p>
-          <h4>What are PMADs?</h4>
+          <h4 className={styles.subtitle}>What are PMADs?</h4>
           <ul>
             <li>Major Depressive Disorder</li>
             <li>Post-Partum Depression</li>

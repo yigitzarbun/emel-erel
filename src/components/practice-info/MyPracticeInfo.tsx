@@ -49,7 +49,7 @@ const MyPracticeInfo = () => {
             <li>{rateIndividual}</li>
             <li>{rateCouple}</li>
           </ul>
-          <h3>Therapy Insurance Information</h3>
+          <h3 className={styles.subtitle}>Therapy Insurance Information</h3>
           <p>
             Services may be covered in full or in part by your health insurance
             or employee benefit plan. Please check your coverage carefully by
@@ -66,9 +66,9 @@ const MyPracticeInfo = () => {
             <li>Is pre-certification required by your insurance company?</li>
             <li>Is approval required from my primary care physician?</li>
           </ul>
-          <h3>Reduced Fee Therapy Services</h3>
+          <h3 className={styles.subtitle}>Reduced Fee Therapy Services</h3>
           <p>{rateReduced}</p>
-          <h3>Payment</h3>
+          <h3 className={styles.subtitle}>Payment</h3>
           <p>{paymentOptions}</p>
         </div>
 
