@@ -27,6 +27,7 @@ const MenuModal = ({ isModalOpen, closeModal }: MenuModalProps) => {
       className={styles.modal}
     >
       <RxCross2 onClick={closeModal} className={styles.close} />
+
       <nav>
         <NavLink
           to={Paths.HOME}

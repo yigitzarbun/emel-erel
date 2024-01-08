@@ -7,6 +7,7 @@
   background-color: $soft;
   border-radius: 20px;
   width: 100%;
+
   @include medium-screen {
     border-radius: 0;
   }

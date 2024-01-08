@@ -81,6 +81,9 @@
       @include small-screen {
         font-size: 0.9rem;
         font-weight: normal;
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 4vh;
       }
     }
     @include small-screen {

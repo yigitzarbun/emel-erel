@@ -103,11 +103,8 @@ const ContactMe = () => {
             regarding your health condition in your messages.
           </h5>
         </div>
-        <div className={styles["text-inner-container"]}>
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className={styles["form-container"]}
-          >
+        <div className={styles["form-container"]}>
+          <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
             <h2>Contact Form</h2>
             <div className={styles["input-container"]}>
               <label>First Name</label>
@@ -149,6 +146,7 @@ const ContactMe = () => {
           </form>
         </div>
       </div>
+
       <img
         src="/images/therapy_room_2.jpeg"
         alt="emel-erel-therapy-room-picutre"

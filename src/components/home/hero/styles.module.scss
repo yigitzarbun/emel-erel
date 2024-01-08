@@ -3,11 +3,10 @@
 
 .hero-container {
   display: flex;
-  flex-direction: column-reverse;
-  column-gap: 60px;
   align-items: flex-start;
   background-color: $soft;
   border-radius: 20px;
+  width: 100%;
 
   @include medium-screen {
     border-radius: 0;
@@ -16,26 +15,21 @@
     flex-direction: column;
     align-items: center;
     column-gap: 0;
-    row-gap: 60px;
-    padding: 0 0 50px 0;
+    row-gap: 20px;
+    padding: 50px 0;
     flex-direction: column-reverse;
     border-radius: 0;
+    background-color: white;
   }
   .texts-outer-container {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    max-width: 100%;
+    width: 100%;
     padding: 40px;
     border-radius: 20px;
     row-gap: 10px;
 
-    @include medium-screen {
-      padding: 40px 0 0 0;
-      width: 100%;
-      background-color: inherit;
-      text-align: center;
-    }
     @include small-screen {
       width: 90%;
       box-sizing: border-box;
@@ -46,7 +40,7 @@
       background-color: white;
       width: 70%;
       margin: 0 auto;
-      padding: 50px 50px;
+      padding: 50px 100px;
       border-radius: 20px;
       display: flex;
       flex-direction: column;
@@ -54,31 +48,27 @@
       box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
       text-align: justify;
 
-      @include medium-screen {
-        padding: 0 0 50px 0;
-        box-shadow: none;
-        width: 80%;
-        margin: 0 auto;
-      }
-
       @include small-screen {
+        text-align: center;
+        align-items: center;
         padding: 0;
         box-shadow: none;
+        width: 100%;
       }
       .title {
-        font-size: 2.7rem;
+        margin: 0 auto;
+        margin-bottom: 40px;
+        font-size: 2rem;
       }
-
-      .sub-title {
-        font-size: 1.2rem;
-        font-weight: 200;
-        margin-bottom: 8vh;
-        width: 70%;
-
+      p {
+        width: 600px;
+        margin: 0 auto;
+        margin-bottom: 30px;
         @include small-screen {
           width: 100%;
         }
       }
+
       .cta-button {
         text-decoration: none;
         color: $alien;
@@ -88,6 +78,7 @@
         padding: 10px;
         width: 300px;
         text-align: center;
+        margin-top: 4vh;
       }
 
       .cta-button:hover {
@@ -97,11 +88,20 @@
     }
   }
   img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 20px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    @include large-screen {
+      display: none;
+    }
+
+    @include medium-screen {
+      display: none;
+    }
+    @include small-screen {
+      width: 100%;
+      height: 30vh;
+      margin: 0 auto;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 0;
+    }
   }
 }
