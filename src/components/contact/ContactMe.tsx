@@ -77,6 +77,11 @@ const ContactMe = () => {
     <div className={styles["home-contact-container"]}>
       <div className={styles["text-outer-container"]}>
         <div className={styles["text-inner-container"]}>
+          <img
+            src="/images/therapy_room_2.jpeg"
+            alt="emel-erel-therapy-room-picutre"
+            className={styles["profile-picture"]}
+          />
           <h3 className={styles.title}>Contact Info</h3>
           <p>
             To schedule an appointment or to obtain additional information
@@ -146,12 +151,6 @@ const ContactMe = () => {
           </form>
         </div>
       </div>
-
-      <img
-        src="/images/therapy_room_2.jpeg"
-        alt="emel-erel-therapy-room-picutre"
-        className={styles["profile-picture"]}
-      />
     </div>
   );
 };

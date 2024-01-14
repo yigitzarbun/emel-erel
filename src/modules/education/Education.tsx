@@ -6,7 +6,7 @@ const Education = () => {
     <div>
       <Helmet>
         <title>
-          Educational Background | NYU |Yeshica University |Columbia University
+          Educational Background | NYU |Yeshiva University |Columbia University
           |Bogazici University
         </title>
         <meta

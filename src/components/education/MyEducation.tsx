@@ -5,6 +5,7 @@ const MyEducation = () => {
     <div className={styles["services-container"]}>
       <div className={styles["texts-container"]}>
         <div className={styles["text-inner-container"]}>
+          <img src="/images/img1.jpg" alt="abstract-painting" />
           <h3 className={styles.title}>Educational Background</h3>
           <ul>
             <li>
@@ -25,7 +26,6 @@ const MyEducation = () => {
           </ul>
         </div>
       </div>
-      <img src="/images/img1.jpg" alt="abstract-painting" />
     </div>
   );
 };

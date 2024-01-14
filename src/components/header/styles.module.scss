@@ -77,6 +77,13 @@
       line-height: 20px;
     }
 
+    h6 {
+      font-size: 0.9rem;
+    }
+    h2 {
+      font-family: "Sacramento", cursive;
+      font-size: 3rem;
+    }
     h5 {
       @include small-screen {
         font-size: 0.9rem;
@@ -111,7 +118,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 40px 0;
+    margin: 10px 0;
     @include small-screen {
       display: none;
     }

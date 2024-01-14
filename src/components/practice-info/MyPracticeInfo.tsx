@@ -44,6 +44,7 @@ const MyPracticeInfo = () => {
     <div className={styles["services-container"]}>
       <div className={styles["texts-container"]}>
         <div className={styles["text-inner-container"]}>
+          <img src="/images/drop.jpg" alt="nature-picture" />
           <h3 className={styles.title}>Rates & Insurance</h3>
           <ul>
             <li>{rateIndividual}</li>
@@ -83,7 +84,6 @@ const MyPracticeInfo = () => {
           </p>
         </div>
       </div>
-      <img src="/images/nature.jpeg" alt="nature-picture" />
     </div>
   );
 };

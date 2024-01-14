@@ -5,6 +5,7 @@ const MySpecializations = () => {
     <div className={styles["services-container"]}>
       <div className={styles["texts-container"]}>
         <div className={styles["text-inner-container"]}>
+          <img src="/images/img3.jpg" alt="abstract-picture" />
           <h3 className={styles.title}>Couples Therapy</h3>
           <p>
             When working with couples, I am always intrigued by the ways people
@@ -67,7 +68,6 @@ const MySpecializations = () => {
           </ul>
         </div>
       </div>
-      <img src="/images/img3.jpg" alt="abstract-picture" />
     </div>
   );
 };

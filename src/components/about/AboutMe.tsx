@@ -5,6 +5,11 @@ const AboutMe = () => {
     <div className={styles["home-about-container"]}>
       <div className={styles["text-outer-container"]}>
         <div className={styles["text-inner-container"]}>
+          <img
+            src="/images/emel_erel_profile.jpeg"
+            alt="emel-erel-profile-picutre"
+            className={styles["profile-picture"]}
+          />
           <h3 className={styles.title}>About Me</h3>
           <p>
             I am a bilingual in Turkish-English, NY and NJ licensed Clinical
@@ -23,11 +28,6 @@ const AboutMe = () => {
           </p>
         </div>
       </div>
-      <img
-        src="/images/emel_erel_profile.jpeg"
-        alt="emel-erel-profile-picutre"
-        className={styles["profile-picture"]}
-      />
     </div>
   );
 };

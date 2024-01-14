@@ -5,6 +5,7 @@ export const MyServices = () => {
     <div className={styles["services-container"]}>
       <div className={styles["texts-container"]}>
         <div className={styles["text-inner-container"]}>
+          <img src="/images/therapy_room.jpeg" alt="therapy-room-picture" />
           <h3 className={styles.title}>Services Provided</h3>
           <ul>
             <li>Individual Therapy for Adolescents and Adults</li>
@@ -51,7 +52,6 @@ export const MyServices = () => {
           </ul>
         </div>
       </div>
-      <img src="/images/therapy_room.jpeg" alt="therapy-room-picture" />
     </div>
   );
 };

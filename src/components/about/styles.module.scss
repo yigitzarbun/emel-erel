@@ -3,10 +3,11 @@
 
 .home-about-container {
   display: flex;
-  column-gap: 60px;
   align-items: flex-start;
+  flex-direction: column;
   background-color: $soft;
   border-radius: 20px;
+  width: 100%;
   @include medium-screen {
     border-radius: 0;
   }
@@ -25,10 +26,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 50%;
+    width: 100%;
     padding: 40px;
     border-radius: 20px;
     row-gap: 10px;
+    box-sizing: border-box;
     @include small-screen {
       width: 90%;
       box-sizing: border-box;
@@ -37,13 +39,46 @@
     }
     .text-inner-container {
       background-color: white;
-      width: 100%;
-      padding: 50px 70px;
+      width: 70%;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 50px 100px;
       border-radius: 20px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      text-align: justify;
+
+      img {
+        @include large-screen {
+          width: 25vh;
+          height: 25vh;
+          margin: 0 auto;
+          object-fit: cover;
+          object-position: top;
+          border-radius: 20px;
+          margin-bottom: 4vh;
+        }
+
+        @include medium-screen {
+          width: 25vh;
+          height: 25vh;
+          margin: 0 auto;
+          object-fit: cover;
+          object-position: top;
+          border-radius: 20px;
+          margin-bottom: 4vh;
+        }
+        @include small-screen {
+          width: 25vh;
+          height: 25vh;
+          margin: 0 auto 4vh auto;
+          object-fit: cover;
+          object-position: top;
+          border-radius: 20px;
+        }
+      }
       @include small-screen {
         text-align: center;
         align-items: center;
@@ -51,62 +86,33 @@
         box-shadow: none;
       }
       .title {
+        margin: 0 auto;
+        margin-bottom: 40px;
         font-size: 2rem;
+        text-align: center;
       }
 
       p {
+        width: 600px;
+        margin: 0 auto;
         margin-bottom: 30px;
+      }
+      @include small-screen {
+        text-align: center;
+        align-items: center;
+        padding: 0;
+        box-shadow: none;
+        width: 100%;
+
+        p {
+          width: 100%;
+        }
       }
       ul {
         @include small-screen {
           text-align: start;
         }
       }
-      .read-more-button {
-        background-color: transparent;
-        border: none;
-        margin-bottom: 30px;
-        font-weight: bold;
-        cursor: pointer;
-      }
-      .read-more-button:hover {
-        color: $dark;
-      }
-      .cta-button {
-        text-decoration: none;
-        color: $alien;
-        border: 3px solid $dark;
-        background-color: $dark;
-        border-radius: 25px;
-        padding: 10px;
-        width: 300px;
-        text-align: center;
-      }
-
-      .cta-button:hover {
-        background-color: $medium;
-        border-color: $medium;
-      }
-    }
-  }
-
-  .profile-picture {
-    width: 260px;
-    object-fit: contain;
-    object-position: top;
-    border-radius: 20px;
-    margin-top: 100px;
-
-    @include medium-screen {
-      width: 250px;
-    }
-
-    @include small-screen {
-      width: 200px;
-      height: auto;
-      margin: 0 auto;
-      object-fit: cover;
-      border-radius: 20px;
     }
   }
 }

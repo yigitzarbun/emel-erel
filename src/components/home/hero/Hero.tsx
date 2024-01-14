@@ -8,6 +8,7 @@ export const Hero = () => {
     <div className={styles["hero-container"]}>
       <div className={styles["texts-outer-container"]}>
         <div className={styles["texts-inner-container"]}>
+          <img src="/images/lotus.jpg" alt="therapy-room" />
           <h1 className={styles.title}>Welcome!</h1>
           <p>
             Thank you for taking the time to visit my website. Here, you will
@@ -26,7 +27,6 @@ export const Hero = () => {
           </Link>
         </div>
       </div>
-      <img src="/images/therapy_room_3.jpeg" alt="therapy-room" />
     </div>
   );
 };
