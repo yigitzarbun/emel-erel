@@ -42,7 +42,7 @@
       background-color: white;
       width: 70%;
       margin: 0 auto;
-      padding: 50px 100px;
+      padding: 20px 100px;
       border-radius: 20px;
       display: flex;
       flex-direction: column;
@@ -53,10 +53,10 @@
       img {
         @include large-screen {
           width: 60%;
-          height: 25vh;
+          height: 35vh;
           margin: 0 auto;
           object-fit: cover;
-          object-position: center;
+          object-position: top;
           border-radius: 20px;
           margin-bottom: 4vh;
         }

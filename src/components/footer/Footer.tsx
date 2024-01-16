@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { MdPhone, MdOutlineEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { useState, useEffect } from "react";
@@ -43,27 +43,76 @@ const Footer = () => {
           </div>
         </Link>
         <nav className={styles.nav}>
-          <Link to={Paths.ABOUT} className={styles.link}>
+          <NavLink
+            to={Paths.ABOUT}
+            className={({ isActive }) =>
+              isActive
+                ? `${styles["active-nav-link"]}`
+                : `${styles["nav-link"]}`
+            }
+          >
             ABOUT
-          </Link>
-          <Link to={Paths.PHILOSOPHY} className={styles.link}>
+          </NavLink>
+          <NavLink
+            to={Paths.PHILOSOPHY}
+            className={({ isActive }) =>
+              isActive
+                ? `${styles["active-nav-link"]}`
+                : `${styles["nav-link"]}`
+            }
+          >
             PHILOSOPHY
-          </Link>
-          <Link to={Paths.SERVICES} className={styles.link}>
+          </NavLink>
+          <NavLink
+            to={Paths.SERVICES}
+            className={({ isActive }) =>
+              isActive
+                ? `${styles["active-nav-link"]}`
+                : `${styles["nav-link"]}`
+            }
+          >
             SERVICES
-          </Link>
-          <Link to={Paths.EDUCATION} className={styles.link}>
+          </NavLink>
+          <NavLink
+            to={Paths.EDUCATION}
+            className={({ isActive }) =>
+              isActive
+                ? `${styles["active-nav-link"]}`
+                : `${styles["nav-link"]}`
+            }
+          >
             EDUCATION
-          </Link>
-          <Link to={Paths.SPECIALIZATIONS} className={styles.link}>
+          </NavLink>
+          <NavLink
+            to={Paths.SPECIALIZATIONS}
+            className={({ isActive }) =>
+              isActive
+                ? `${styles["active-nav-link"]}`
+                : `${styles["nav-link"]}`
+            }
+          >
             SPECIALIZATIONS
-          </Link>
-          <Link to={Paths.PRACTICE_INFO} className={styles.link}>
+          </NavLink>
+          <NavLink
+            to={Paths.PRACTICE_INFO}
+            className={({ isActive }) =>
+              isActive
+                ? `${styles["active-nav-link"]}`
+                : `${styles["nav-link"]}`
+            }
+          >
             PRACTICE INFO
-          </Link>
-          <Link to={Paths.CONTACT} className={styles.link}>
+          </NavLink>
+          <NavLink
+            to={Paths.CONTACT}
+            className={({ isActive }) =>
+              isActive
+                ? `${styles["active-nav-link"]}`
+                : `${styles["nav-link"]}`
+            }
+          >
             CONTACT
-          </Link>
+          </NavLink>
         </nav>
         <div className={styles["contact-container"]}>
           <div className={styles.contact}>
