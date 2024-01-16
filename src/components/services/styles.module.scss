@@ -15,11 +15,12 @@
     flex-direction: column;
     align-items: center;
     column-gap: 0;
-    row-gap: 7vh;
-    padding: 50px 0;
+    row-gap: 20px;
+    padding: 20px 0;
     flex-direction: column-reverse;
     border-radius: 0;
     background-color: white;
+    box-sizing: border-box;
   }
   .texts-container {
     display: flex;
@@ -63,7 +64,7 @@
 
       @include medium-screen {
         width: 60%;
-        height: 25vh;
+        height: 35vh;
         margin: 0 auto;
         object-fit: cover;
         object-position: center;
@@ -72,7 +73,7 @@
       }
       @include small-screen {
         width: 80%;
-        height: 20vh;
+        height: 25vh;
         margin: 0 auto 4vh auto;
         object-fit: cover;
         object-position: center;

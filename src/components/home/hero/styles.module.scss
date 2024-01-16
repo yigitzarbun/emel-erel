@@ -4,6 +4,7 @@
 .hero-container {
   display: flex;
   align-items: flex-start;
+  flex-direction: column;
   background-color: $soft;
   border-radius: 20px;
   width: 100%;
@@ -16,10 +17,11 @@
     align-items: center;
     column-gap: 0;
     row-gap: 20px;
-    padding: 50px 0;
+    padding: 20px 0;
     flex-direction: column-reverse;
     border-radius: 0;
     background-color: white;
+    box-sizing: border-box;
   }
   .texts-outer-container {
     display: flex;
@@ -29,6 +31,7 @@
     padding: 40px;
     border-radius: 20px;
     row-gap: 10px;
+    box-sizing: border-box;
 
     @include small-screen {
       width: 90%;
@@ -61,7 +64,7 @@
 
         @include medium-screen {
           width: 60%;
-          height: 25vh;
+          height: 35vh;
           margin: 0 auto;
           object-fit: cover;
           object-position: center;
@@ -70,7 +73,7 @@
         }
         @include small-screen {
           width: 80%;
-          height: 20vh;
+          height: 25vh;
           margin: 0 auto 4vh auto;
           object-fit: cover;
           object-position: center;
@@ -93,8 +96,10 @@
         width: 600px;
         margin: 0 auto;
         margin-bottom: 30px;
+        box-sizing: border-box;
+
         @include small-screen {
-          width: 100%;
+          width: 80%;
         }
       }
 
@@ -108,6 +113,11 @@
         width: 300px;
         text-align: center;
         margin-top: 4vh;
+
+        @include small-screen {
+          width: 50%;
+          margin: 0 auto;
+        }
       }
 
       .cta-button:hover {
