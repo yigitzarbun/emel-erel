@@ -15,31 +15,22 @@ type FormValues = {
 
 const ContactMe = () => {
   const [contactEmail, setContactEmail] = useState("");
-
   const [contactPhone, setContactPhone] = useState("");
-
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm<FormValues>();
-
   const recaptchaKey = import.meta.env.VITE_REACT_APP_RECAPTCHA_KEY;
 
   const onSubmit: SubmitHandler<FormValues> = async (formData: FormValues) => {
     try {
-      if (!window.grecaptcha) {
-        throw new Error("reCAPTCHA not loaded");
-      }
-      // Execute reCAPTCHA
       const token = await new Promise<string>((resolve, reject) => {
         if (window.grecaptcha) {
           window.grecaptcha.ready(() => {
             window.grecaptcha
-              .execute(recaptchaKey, {
-                action: "submit",
-              })
+              .execute(recaptchaKey, { action: "submit" })
               .then((token: string) => resolve(token))
               .catch((err: Error) => reject(err));
           });
@@ -81,7 +72,7 @@ const ContactMe = () => {
     };
 
     loadRecaptchaScript();
-  }, []);
+  }, [recaptchaKey]);
 
   useEffect(() => {
     const fetchTitle = async () => {
@@ -91,15 +82,13 @@ const ContactMe = () => {
             import.meta.env.VITE_REACT_APP_CONTENTFUL_TOKEN
           }`
         );
-        for (let i = 0; i < response.data.items.length; i++) {
-          if (response.data.items[i].sys.id === "1MBGunnQTjzOJ2JjdHUROS") {
-            setContactEmail(response.data.items[i].fields.title);
-          } else if (
-            response.data.items[i].sys.id === "1D069TJl77vWKSkxHT1Owc"
-          ) {
-            setContactPhone(response.data.items[i].fields.title);
+        response.data.items.forEach((item: any) => {
+          if (item.sys.id === "1MBGunnQTjzOJ2JjdHUROS") {
+            setContactEmail(item.fields.title);
+          } else if (item.sys.id === "1D069TJl77vWKSkxHT1Owc") {
+            setContactPhone(item.fields.title);
           }
-        }
+        });
       } catch (error) {
         console.error("Error fetching contact info:", error);
       }
