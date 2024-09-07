@@ -1,11 +1,9 @@
+import { useEffect, useState } from "react";
 import { MdPhone, MdOutlineEmail } from "react-icons/md";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { toast } from "react-toastify";
 import axios from "axios";
-import { useState, useEffect } from "react";
-
 import emailjs from "@emailjs/browser";
-
 import styles from "./styles.module.scss";
 
 type FormValues = {
@@ -16,12 +14,10 @@ type FormValues = {
 };
 
 const ContactMe = () => {
-  const contentfulToken = import.meta.env.VITE_REACT_APP_CONTENTFUL_TOKEN;
-  const viteEmailId = import.meta.env.VITE_REACT_APP_EMAILJS_SERVICE_ID;
-  const viteTemplateId = import.meta.env.VITE_REACT_APP_EMAILJS_TEMPLATE_ID;
-  const viteApiKey = import.meta.env.VITE_REACT_APP_EMAILJS_API_KEY;
   const [contactEmail, setContactEmail] = useState("");
+
   const [contactPhone, setContactPhone] = useState("");
+
   const {
     register,
     handleSubmit,
@@ -29,34 +25,71 @@ const ContactMe = () => {
     formState: { errors },
   } = useForm<FormValues>();
 
-  const onSubmit: SubmitHandler<FormValues> = (formData: FormValues) => {
-    const templateParams = {
-      from_name: formData.fname + " " + formData.lname + " " + formData.email,
-      message: formData.message,
-      to_email: contactEmail,
-    };
+  const recaptchaKey = import.meta.env.VITE_REACT_APP_RECAPTCHA_KEY;
+
+  const onSubmit: SubmitHandler<FormValues> = async (formData: FormValues) => {
     try {
-      emailjs
-        .send(viteEmailId, viteTemplateId, templateParams, viteApiKey)
-        .then(
-          () => {
-            toast.success("Form submitted");
-          },
-          () => {
-            toast.error("Form submission failed");
-          }
-        );
+      if (!window.grecaptcha) {
+        throw new Error("reCAPTCHA not loaded");
+      }
+      // Execute reCAPTCHA
+      const token = await new Promise<string>((resolve, reject) => {
+        if (window.grecaptcha) {
+          window.grecaptcha.ready(() => {
+            window.grecaptcha
+              .execute(recaptchaKey, {
+                action: "submit",
+              })
+              .then((token: string) => resolve(token))
+              .catch((err: Error) => reject(err));
+          });
+        } else {
+          reject(new Error("reCAPTCHA not loaded"));
+        }
+      });
+
+      const templateParams = {
+        from_name: `${formData.fname} ${formData.lname} ${formData.email}`,
+        message: formData.message,
+        to_email: contactEmail,
+        "g-recaptcha-response": token,
+      };
+
+      await emailjs.send(
+        import.meta.env.VITE_REACT_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_REACT_APP_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_REACT_APP_EMAILJS_API_KEY
+      );
+
+      toast.success("Form submitted");
       reset();
     } catch (error) {
-      console.log(error);
+      toast.error("Form submission failed");
+      console.error("Error submitting form:", error);
     }
   };
+
+  useEffect(() => {
+    const loadRecaptchaScript = () => {
+      const script = document.createElement("script");
+      script.src = `https://www.google.com/recaptcha/api.js?render=${recaptchaKey}`;
+      script.async = true;
+      script.defer = true;
+      script.onload = () => console.log("reCAPTCHA script loaded");
+      document.head.appendChild(script);
+    };
+
+    loadRecaptchaScript();
+  }, []);
 
   useEffect(() => {
     const fetchTitle = async () => {
       try {
         const response = await axios.get(
-          `https://cdn.contentful.com/spaces/tqqtse60ni6t/entries?content_type=hero&access_token=${contentfulToken}`
+          `https://cdn.contentful.com/spaces/tqqtse60ni6t/entries?content_type=hero&access_token=${
+            import.meta.env.VITE_REACT_APP_CONTENTFUL_TOKEN
+          }`
         );
         for (let i = 0; i < response.data.items.length; i++) {
           if (response.data.items[i].sys.id === "1MBGunnQTjzOJ2JjdHUROS") {
@@ -68,11 +101,12 @@ const ContactMe = () => {
           }
         }
       } catch (error) {
-        console.error("Error fetching blog posts:", error);
+        console.error("Error fetching contact info:", error);
       }
     };
     fetchTitle();
   }, []);
+
   return (
     <div className={styles["home-contact-container"]}>
       <div className={styles["text-outer-container"]}>
