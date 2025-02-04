@@ -1,45 +1,6 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-
 import styles from "./styles.module.scss";
 
 const MyPracticeInfo = () => {
-  const contentfulToken = import.meta.env.VITE_REACT_APP_CONTENTFUL_TOKEN;
-  const [rateIndividual, setRateIndividual] = useState("");
-  const [rateCouple, setRateCouple] = useState("");
-  const [rateReduced, setRateReduced] = useState("");
-  const [paymentOptions, setPaymentOptions] = useState("");
-
-  useEffect(() => {
-    const fetchTitle = async () => {
-      try {
-        const response = await axios.get(
-          `https://cdn.contentful.com/spaces/tqqtse60ni6t/entries?content_type=hero&access_token=${contentfulToken}`
-        );
-        for (let i = 0; i < response.data.items.length; i++) {
-          if (response.data.items[i].sys.id === "1ZtHz5Ywk8X0dhQxbxFa7E") {
-            setRateIndividual(response.data.items[i].fields.title);
-          } else if (
-            response.data.items[i].sys.id === "5juCSWsIgAEyP1BGRNjLkB"
-          ) {
-            setRateCouple(response.data.items[i].fields.title);
-          } else if (
-            response.data.items[i].sys.id === "PVHgWVZQjESET2OaVJXQd"
-          ) {
-            setRateReduced(response.data.items[i].fields.title);
-          } else if (
-            response.data.items[i].sys.id === "6F5xbuLH5cU3JvTTMKKaA"
-          ) {
-            setPaymentOptions(response.data.items[i].fields.title);
-          }
-        }
-      } catch (error) {
-        console.error("Error fetching blog posts:", error);
-      }
-    };
-    fetchTitle();
-  }, []);
-
   return (
     <div className={styles["services-container"]}>
       <div className={styles["texts-container"]}>
@@ -47,8 +8,8 @@ const MyPracticeInfo = () => {
           <img src="/images/drop.jpg" alt="nature-picture" />
           <h3 className={styles.title}>Rates & Insurance</h3>
           <ul>
-            <li>{rateIndividual}</li>
-            <li>{rateCouple}</li>
+            <li>Couples Therapy $325 per 75-minute session</li>
+            <li>Individual Therapy $250 per 45-minute session</li>
           </ul>
           <h3 className={styles.subtitle}>Therapy Insurance Information</h3>
           <p>
@@ -68,9 +29,12 @@ const MyPracticeInfo = () => {
             <li>Is approval required from my primary care physician?</li>
           </ul>
           <h3 className={styles.subtitle}>Reduced Fee Therapy Services</h3>
-          <p>{rateReduced}</p>
+          <p>
+            Reduced fee services are available on a limited basis. Currently, I
+            accept AETNA insurance and all out of network insurances.
+          </p>
           <h3 className={styles.subtitle}>Payment</h3>
-          <p>{paymentOptions}</p>
+          <p>Cash, checks, Venmo and Zelle are accepted forms of payment.</p>
         </div>
 
         <div className={styles["text-inner-container"]}>

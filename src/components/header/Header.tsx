@@ -2,8 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 import { MdPhone, MdOutlineEmail } from "react-icons/md";
 import { FaAlignJustify } from "react-icons/fa6";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState } from "react";
 import MenuModal from "./menu-modal/MenuModal";
 import styles from "./styles.module.scss";
 import Paths from "../../routing/Paths";
@@ -23,49 +22,19 @@ const Header = () => {
     setCtaVisible(false);
   };
 
-  const [ctaText, setCtaText] = useState("");
-  const [contactEmail, setContactEmail] = useState("");
-  const [contactPhone, setContactPhone] = useState("");
-  const contentfulToken = import.meta.env.VITE_REACT_APP_CONTENTFUL_TOKEN;
-
-  useEffect(() => {
-    const fetchTitle = async () => {
-      try {
-        const response = await axios.get(
-          `https://cdn.contentful.com/spaces/tqqtse60ni6t/entries?content_type=hero&access_token=${contentfulToken}`
-        );
-        for (let i = 0; i < response.data.items.length; i++) {
-          if (response.data.items[i].sys.id === "4S8lJMrnvyyeffG2whtlQP") {
-            setCtaText(response.data.items[i].fields.title);
-          } else if (
-            response.data.items[i].sys.id === "1MBGunnQTjzOJ2JjdHUROS"
-          ) {
-            setContactEmail(response.data.items[i].fields.title);
-          } else if (
-            response.data.items[i].sys.id === "1D069TJl77vWKSkxHT1Owc"
-          ) {
-            setContactPhone(response.data.items[i].fields.title);
-          }
-        }
-      } catch (error) {
-        console.error("Error fetching blog posts:", error);
-      }
-    };
-    fetchTitle();
-  }, []);
   return (
     <div className={styles["header-container"]}>
       {ctaVisible && (
         <div className={styles["cta-container"]}>
-          <p>{ctaText}</p>
+          <p>Call or email Emel L. Erel, Psy.D. now to book an appointment</p>
           <div className={styles["contact-container"]}>
             <div className={styles.contact}>
               <MdOutlineEmail className={styles.icon} />
-              <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+              <a href="mailto:emelerel@gmail.com">emelerel@gmail.com</a>
             </div>
             <div className={styles.contact}>
               <MdPhone className={styles.icon} />
-              <a href={`tel:${contactPhone}`}>{contactPhone}</a>
+              <a href="tel:646-326-6814">646-326-6814</a>
             </div>
           </div>
           <Link to={Paths.CONTACT} className={styles["cta-button"]}>

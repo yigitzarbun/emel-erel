@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { MdPhone, MdOutlineEmail } from "react-icons/md";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { toast } from "react-toastify";
-import axios from "axios";
 import emailjs from "@emailjs/browser";
 import styles from "./styles.module.scss";
 
@@ -14,8 +13,6 @@ type FormValues = {
 };
 
 const ContactMe = () => {
-  const [contactEmail, setContactEmail] = useState("");
-  const [contactPhone, setContactPhone] = useState("");
   const {
     register,
     handleSubmit,
@@ -42,7 +39,7 @@ const ContactMe = () => {
       const templateParams = {
         from_name: `${formData.fname} ${formData.lname} ${formData.email}`,
         message: formData.message,
-        to_email: contactEmail,
+        to_email: "emelerel@gmail.com",
         "g-recaptcha-response": token,
       };
 
@@ -74,28 +71,6 @@ const ContactMe = () => {
     loadRecaptchaScript();
   }, [recaptchaKey]);
 
-  useEffect(() => {
-    const fetchTitle = async () => {
-      try {
-        const response = await axios.get(
-          `https://cdn.contentful.com/spaces/tqqtse60ni6t/entries?content_type=hero&access_token=${
-            import.meta.env.VITE_REACT_APP_CONTENTFUL_TOKEN
-          }`
-        );
-        response.data.items.forEach((item: any) => {
-          if (item.sys.id === "1MBGunnQTjzOJ2JjdHUROS") {
-            setContactEmail(item.fields.title);
-          } else if (item.sys.id === "1D069TJl77vWKSkxHT1Owc") {
-            setContactPhone(item.fields.title);
-          }
-        });
-      } catch (error) {
-        console.error("Error fetching contact info:", error);
-      }
-    };
-    fetchTitle();
-  }, []);
-
   return (
     <div className={styles["home-contact-container"]}>
       <div className={styles["text-outer-container"]}>
@@ -113,11 +88,11 @@ const ContactMe = () => {
           <div className={styles["contact-container"]}>
             <div className={styles.contact}>
               <MdOutlineEmail />
-              <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+              <a href="mailto:emelerel@gmail.com">emelerel@gmail.com</a>
             </div>
             <div className={styles.contact}>
               <MdPhone />
-              <a href={`tel:${contactPhone}`}>{contactPhone}</a>
+              <a href="tel:646-326-6814">646-326-6814</a>
             </div>
           </div>
           <div className={styles.office}>
