@@ -1,16 +1,5 @@
-import { useEffect, useState } from "react";
 import { MdPhone, MdOutlineEmail } from "react-icons/md";
-import { useForm, SubmitHandler } from "react-hook-form";
-import { toast } from "react-toastify";
-import emailjs from "@emailjs/browser";
 import styles from "./styles.module.scss";
-
-type FormValues = {
-  fname: string;
-  lname: string;
-  email: string;
-  message: string;
-};
 
 const ContactMe = () => {
   return (
