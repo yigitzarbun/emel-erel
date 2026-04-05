@@ -1,10 +1,7 @@
-import styles from "./styles.module.scss";
+import React from "react";
+
 const PageLoading = () => {
-  return (
-    <div className={styles["main-container"]}>
-      <h2>Page Loading</h2>
-    </div>
-  );
+  return <div>Loading...</div>;
 };
 
 export default PageLoading;

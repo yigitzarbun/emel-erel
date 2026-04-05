@@ -1,0 +1,96 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 1rem 0;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  a {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .logo-link {
+    text-decoration: none;
+    color: var(--muted);
+    transition: color 0.2s ease;
+    font-size: 2rem;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  /* The Active State */
+  .logo-active {
+    color: var(--text) !important; // Ensure it overrides the muted color
+    font-weight: 600; // Optional: make it slightly bolder
+    border-bottom: 2px solid var(--text); // Optional: add an indicator line
+    font-size: 2rem;
+  }
+}
+
+/* HAMBURGER BUTTON - Hidden on Desktop */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+}
+
+/* LINKS LOGIC */
+.links {
+  display: flex;
+  gap: 1.5rem;
+
+  a {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .link {
+    text-decoration: none;
+    color: var(--muted);
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--text);
+      opacity: 0.7;
+    }
+  }
+
+  /* The Active State */
+  .active {
+    color: var(--text) !important; // Ensure it overrides the muted color
+    font-weight: 600; // Optional: make it slightly bolder
+    border-bottom: 2px solid var(--text); // Optional: add an indicator line
+  }
+
+  @media (max-width: 768px) {
+    display: none; // Hidden by default on mobile
+    flex-direction: column;
+    position: absolute;
+    top: 100%; // Sits right under the nav
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 2rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+    &.active {
+      display: flex; // Shows when state is true
+    }
+  }
+}

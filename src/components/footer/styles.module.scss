@@ -1,179 +1,67 @@
-@import "/src/common/colors.scss";
-@import "/src/common/media.scss";
+.footer {
+  padding: 4rem 5% 2rem;
+  margin-top: 5vh;
+  border-top: 1px solid #eaeaea;
+  color: var(--text);
 
-.footer-container {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  margin-top: 40px;
-
-  @include small-screen {
-    padding-top: 40px;
-    align-items: center;
-  }
-
-  hr {
-    border: 1px solid black;
-    width: 100%;
-    margin: 5vh 0;
-  }
-  .nav-container {
+  .inner {
+    max-width: 1100px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: start;
-    @include medium-screen {
-      flex-direction: column;
-      align-items: center;
-      row-gap: 10vh;
-    }
-    @include small-screen {
+    gap: 3rem;
+
+    @media (max-width: 768px) {
       flex-direction: column;
       text-align: center;
-      row-gap: 10vh;
-    }
-
-    .logo-container {
-      display: flex;
-      flex-direction: column;
-      line-height: 1px;
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-      line-height: 20px;
-
-      @include medium-screen {
-        text-align: center;
-      }
-      @include small-screen {
-        text-align: center;
-        margin: 0 auto;
-      }
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      row-gap: 10px;
-      flex-wrap: wrap;
-      @include large-screen {
-        width: 30%;
-      }
-      @include medium-screen {
-        flex-direction: row;
-        column-gap: 5vw;
-        font-weight: bold;
-        flex-direction: row;
-        margin: 0 auto;
-      }
-
-      @include small-screen {
-        flex-direction: row;
-        font-weight: bold;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 70%;
-        margin: 0 auto;
-        justify-content: center;
-        column-gap: 5vw;
-      }
-      .nav-link {
-        text-decoration: none;
-        color: black;
-        cursor: pointer;
-        font-weight: medium;
-      }
-
-      .nav-link:hover {
-        color: $medium;
-      }
-
-      .active-nav-link {
-        text-decoration: none;
-        color: $dark;
-      }
+      gap: 2rem;
     }
   }
-  .contact-container {
+
+  h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  p,
+  address {
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-style: normal;
+    line-height: 1.6;
+  }
+
+  .contact-container,
+  .address-container {
     display: flex;
     flex-direction: column;
-    column-gap: 20px;
-    row-gap: 20px;
-    @include medium-screen {
-      flex-direction: row;
-      width: 70%;
-      margin: 0 auto;
-    }
-    @include small-screen {
-      margin: 0 auto;
-      align-items: center;
-    }
-    .contact {
-      display: flex;
-      align-items: center;
-      column-gap: 10px;
+    gap: 0.5rem;
 
-      a {
-        color: black;
-        cursor: pointer;
-        text-decoration: none;
-      }
-      a:hover {
-        color: $dark;
-        @include small-screen {
-          color: $dark;
-        }
-      }
-      @include medium-screen {
-        text-align: center;
-        margin: 0 auto;
-      }
-    }
-
-    .cta-button {
+    a {
       text-decoration: none;
-      color: $alien;
-      border: 3px solid $dark;
-      background-color: $dark;
-      border-radius: 25px;
-      padding: 10px;
-      width: 200px;
-      text-align: center;
-    }
+      color: var(--text);
+      transition: opacity 0.2s;
 
-    .cta-button:hover {
-      background-color: $medium;
-      border-color: $medium;
-
-      @include small-screen {
-        border-color: $medium;
-        background-color: $medium;
+      &:hover {
+        opacity: 0.7;
       }
     }
   }
 
   .address-container {
-    display: flex;
-    align-items: flex-start;
-    address {
-      width: 200px;
-      @include medium-screen {
-        width: 100%;
-        align-items: center;
-      }
-      @include small-screen {
-        width: 100%;
-      }
-    }
-
-    @include small-screen {
-      text-align: center;
-      margin: 0 auto;
+    max-width: 200px;
+    @media (max-width: 768px) {
+      max-width: 100%;
     }
   }
+
   .copyright {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #f5f5f5;
+    font-size: 0.8rem;
+    color: #999;
     text-align: center;
   }
 }

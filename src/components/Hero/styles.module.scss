@@ -1,0 +1,26 @@
+/* Hero.module.scss */
+
+.hero {
+  text-align: center;
+  padding: 5rem 1rem 3rem;
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-weight: 500;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero {
+    padding: 3rem 1rem 2rem;
+  }
+}

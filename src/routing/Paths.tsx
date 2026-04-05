@@ -7,8 +7,9 @@ export default {
   ABOUT: "/about",
   CONTACT: "/contact",
   SERVICES: "/services",
-  PHILOSOPHY: "/philosophy",
-  EDUCATION: "/educational-background",
+  APPROACH: "/approach",
   SPECIALIZATIONS: "/specializations",
-  PRACTICE_INFO: "/practice-info",
+  POLICY: "/policy",
+  COUPLES_THERAPY: "/couples-therapy",
+  PMAD: "/perinatal-mood-and-anxiety-disorders",
 } as Paths;

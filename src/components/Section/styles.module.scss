@@ -1,0 +1,29 @@
+/* Section.module.scss */
+
+.section {
+  margin: 4rem 0;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+}
+
+.content {
+  max-width: 680px;
+}
+
+.center {
+  text-align: center;
+
+  .content {
+    margin: 0 auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .section {
+    margin: 2.5rem 0;
+  }
+}

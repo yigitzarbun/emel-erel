@@ -1,15 +1,16 @@
-import Header from "../header/Header";
-import Footer from "../footer/Footer";
+import React from "react";
+import { Outlet } from "react-router-dom";
+import styles from "./styles.module.scss";
+import NavBar from "../NavBar/NavBar";
+import Footer from "../Footer/Footer";
 
-interface MainLayoutProps {
-  children: React.ReactNode | React.ReactNode[];
-}
-
-const MainLayout = ({ children }: MainLayoutProps) => {
+const MainLayout: React.FC = () => {
   return (
-    <div>
-      <Header />
-      {children}
+    <div className={styles.layout}>
+      <NavBar />
+      <main className="container">
+        <Outlet />
+      </main>
       <Footer />
     </div>
   );
