@@ -1,6 +1,6 @@
 import styles from "./styles.module.scss";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>

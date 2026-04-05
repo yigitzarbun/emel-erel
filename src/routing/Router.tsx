@@ -1,10 +1,9 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
-
-import MainLayout from "../components/Layout/MainLayout";
-import PageLoading from "../components/Loading/PageLoading";
 import Paths from "./Paths";
 
+const MainLayout = lazy(() => import("../components/Layout/MainLayout"));
+const PageLoading = lazy(() => import("../components/Loading/PageLoading"));
 const Home = lazy(() => import("../modules/pages/Home/Home"));
 const About = lazy(() => import("../modules/pages/About/About"));
 const Services = lazy(() => import("../modules/pages/Services/Services"));
