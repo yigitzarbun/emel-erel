@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { MdMenu, MdClose } from "react-icons/md"; // Material Design icons
 import styles from "./styles.module.scss";
 import Paths from "../../routing/Paths";
