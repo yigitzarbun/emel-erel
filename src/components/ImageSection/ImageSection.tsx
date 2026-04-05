@@ -1,5 +1,3 @@
-// src/components/ImageSection/ImageSection.tsx
-
 import styles from "./styles.module.scss";
 
 type Props = {
