@@ -21,7 +21,7 @@ const Home: React.FC = () => {
           </div>
 
           <div className={styles.text}>
-            <h1>A Space to Understand Yourself</h1>
+            <h1>Welcome!</h1>
 
             <p>
               Thank you for taking the time to visit my website. Here, you will
@@ -36,42 +36,8 @@ const Home: React.FC = () => {
               take the time to explore my website and feel free to contact me
               with any questions.
             </p>
-
-            <button
-              onClick={handleNavigateToContact}
-              className={styles.primaryButton}
-            >
-              Book Consultation
-            </button>
           </div>
         </div>
-      </section>
-
-      {/* SERVICES */}
-      <section className={styles.context}>
-        <div className={styles.inner}>
-          <p>
-            I work with adolescents, adults, and couples navigating emotional
-            difficulties, relationships, and life transitions. Therapy offers a
-            space to better understand yourself, your patterns, and your
-            relationships.
-          </p>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className={styles.cta}>
-        <h2>Begin the Process</h2>
-        <p>
-          If you are considering therapy, you are welcome to reach out for an
-          initial consultation.
-        </p>
-        <button
-          onClick={handleNavigateToContact}
-          className={styles.primaryButton}
-        >
-          Contact
-        </button>
       </section>
     </div>
   );

@@ -13,11 +13,7 @@ const Services: React.FC = () => {
 
           <div className={styles.text}>
             <h1>Services & Specializations</h1>
-            <p>
-              I provide psychotherapy for adolescents, adults, couples, and
-              families, focusing on understanding emotional patterns and
-              creating lasting psychological change.
-            </p>
+            <h3>Services provided:</h3>
             <ul>
               <li>Individual Therapy for Adolescents and Adults</li>
               <li>
@@ -35,7 +31,7 @@ const Services: React.FC = () => {
 
       {/* SPECIALIZATIONS */}
       <section className={styles.education}>
-        <h2>Clinical Interests & Experience</h2>
+        <h2>My Clinical Interests and Experience Areas:</h2>
 
         <div className={styles.grid}>
           <div className={styles.card}>Anxiety</div>

@@ -71,6 +71,10 @@
     }
   }
 
+  .subtitle {
+    font-size: 0.7rem;
+  }
+
   /* The Active State */
   .active {
     color: var(--text) !important; // Ensure it overrides the muted color

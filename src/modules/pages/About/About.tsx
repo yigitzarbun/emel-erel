@@ -14,7 +14,7 @@ const About: React.FC = () => {
             <img src="/images/emel_erel_profile.jpeg" alt="Dr. Emel Erel" />
           </div>
           <div className={styles.text}>
-            <h1>About Dr. Emel Erel</h1>
+            <h1>About</h1>
             <p>
               I am a bilingual in Turkish-English, NY and NJ licensed Clinical
               Psychologist for over 20 years of clinical experience in working
@@ -35,23 +35,9 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* APPROACH / PHILOSOPHY */}
-      <section className={styles.approach}>
-        <h2>My Approach</h2>
-        <p>
-          Grounded in psychodynamic and psychoanalytic frameworks, I help
-          patients explore patterns, emotions, and relationships to achieve
-          meaningful emotional growth.
-        </p>
-        <p>
-          Therapy is a collaborative process where each session fosters insight,
-          understanding, and the ability to create lasting change.
-        </p>
-      </section>
-
       {/* EDUCATION & CREDENTIALS */}
       <section className={styles.education}>
-        <h2>Education & Credentials</h2>
+        <h2>Educational Background</h2>
         <div className={styles.grid}>
           <div className={styles.card}>
             NYU Postdoctoral Program in Psychotherapy and

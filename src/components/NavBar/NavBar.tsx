@@ -10,16 +10,21 @@ const Navbar = () => {
   return (
     <nav className={styles.nav}>
       <div className={styles.inner}>
-        <NavLink
-          to={Paths.HOME}
-          className={({ isActive }) =>
-            isActive
-              ? `${styles["logo-link"]} ${styles["logo-active"]}`
-              : styles["logo-link"]
-          }
-        >
-          Emel L. Erel, Psy.D.
-        </NavLink>
+        <div>
+          <NavLink
+            to={Paths.HOME}
+            className={({ isActive }) =>
+              isActive
+                ? `${styles["logo-link"]} ${styles["logo-active"]}`
+                : styles["logo-link"]
+            }
+          >
+            Emel L. Erel, Psy.D. <br />{" "}
+          </NavLink>
+          <p className={styles.subtitle}>
+            New Jersey & New York Licensed Psychologist
+          </p>
+        </div>
 
         <button
           className={styles.burger}

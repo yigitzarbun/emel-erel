@@ -24,12 +24,12 @@ const CouplesTherapy: React.FC = () => {
               find themselves caught in painful, repetitive patterns?
             </p>
             <p>
-              Psychoanalytically informed couples therapy can offer a space to
-              reflect more deeply on these dynamics. It invites partners to
-              examine how each person contributes—often outside of awareness—to
-              the patterns that shape their interactions. By bringing these
-              processes into focus, couples can begin to understand not only
-              what is happening between them, but why.
+              From a psychoanalytic perspective, such patterns are rarely
+              accidental. Partners may unconsciously recreate familiar
+              relational dynamics, often rooted in early developmental
+              experiences. In this way, longstanding emotional conflicts and
+              unmet needs can be re-enacted within the relationship, even when
+              these patterns lead to dissatisfaction or distress.
             </p>
           </div>
         </div>
@@ -37,6 +37,14 @@ const CouplesTherapy: React.FC = () => {
 
       <section className={styles.context}>
         <div className={styles.inner}>
+          <p>
+            Psychoanalytically informed couples therapy can offer a space to
+            reflect more deeply on these dynamics. It invites partners to
+            examine how each person contributes—often outside of awareness—to
+            the patterns that shape their interactions. By bringing these
+            processes into focus, couples can begin to understand not only what
+            is happening between them, but why.
+          </p>
           <p>
             This growing awareness can open the possibility for new ways of
             relating—ways that are less constrained by past experiences and more

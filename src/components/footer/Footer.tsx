@@ -8,7 +8,8 @@ const Footer: React.FC = () => {
         {/* Brand Section */}
         <div>
           <h2>Emel L. Erel, Psy.D.</h2>
-          <p>Licensed Psychologist (NY & NJ)</p>
+          <p>New Jersey & New York Licensed Psychologist</p>
+          <p>PSYCHOTHERAPY FOR ADULTS, ADOLESCENTS AND COUPLES</p>
         </div>
 
         {/* Contact Section */}
