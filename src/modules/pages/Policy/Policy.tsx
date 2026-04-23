@@ -29,30 +29,27 @@ const Policy: React.FC = () => {
               it will end at its regularly scheduled time. If I am late for a
               session, I will make up the lost time.
             </p>
+            <h3>Cancellation</h3>
+            <p>
+              It is important for you to understand that your appointment time
+              is reserved exclusively for you. As such, you are financially
+              responsible for your appointment. Should you not be able to attend
+              a session for any reason and notify me 24 hours in advance,
+              another appointment may be scheduled as a makeup session,
+              depending on our schedules. You will be charged for the makeup
+              session and not for the original appointment. In some cases,
+              should my schedule permit, a tele-health session may substitute
+              for your original appointment. If for some reason, there is no
+              available time, or if your schedule does not permit a makeup
+              session, or if you do not notify me in advance, you will be
+              charged for the original appointment.
+            </p>
+            <br />
+            <br />
+            <h3>Payments</h3>
+            <p>Cash, checks, Venmo and Zelle are accepted forms of payment.</p>
           </div>
         </div>
-      </section>
-
-      {/* Policy / PHILOSOPHY */}
-      <section className={styles.approach}>
-        <h3>Cancellation</h3>
-        <p>
-          It is important for you to understand that your appointment time is
-          reserved exclusively for you. As such, you are financially responsible
-          for your appointment. Should you not be able to attend a session for
-          any reason and notify me 24 hours in advance, another appointment may
-          be scheduled as a makeup session, depending on our schedules. You will
-          be charged for the makeup session and not for the original
-          appointment. In some cases, should my schedule permit, a tele-health
-          session may substitute for your original appointment. If for some
-          reason, there is no available time, or if your schedule does not
-          permit a makeup session, or if you do not notify me in advance, you
-          will be charged for the original appointment.
-        </p>
-        <br />
-        <br />
-        <h3>Payments</h3>
-        <p>Cash, checks, Venmo and Zelle are accepted forms of payment.</p>
       </section>
     </div>
   );

@@ -21,7 +21,9 @@
     text-decoration: none;
     color: var(--muted);
     transition: color 0.2s ease;
-    font-size: 2rem;
+
+    font-size: clamp(1.4rem, 2.5vw, 2rem); // responsive scaling
+
     &:hover {
       opacity: 0.7;
     }
@@ -45,7 +47,7 @@
   border: none;
   cursor: pointer;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     display: flex;
   }
 }
@@ -82,7 +84,7 @@
     border-bottom: 2px solid var(--text); // Optional: add an indicator line
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     display: none; // Hidden by default on mobile
     flex-direction: column;
     position: absolute;
@@ -96,5 +98,13 @@
     &.active {
       display: flex; // Shows when state is true
     }
+  }
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  max-width: 320px;
+  @media (max-width: 1000px) {
+    display: none !important;
   }
 }

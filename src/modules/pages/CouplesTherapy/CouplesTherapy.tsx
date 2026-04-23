@@ -31,25 +31,20 @@ const CouplesTherapy: React.FC = () => {
               unmet needs can be re-enacted within the relationship, even when
               these patterns lead to dissatisfaction or distress.
             </p>
+            <p>
+              Psychoanalytically informed couples therapy can offer a space to
+              reflect more deeply on these dynamics. It invites partners to
+              examine how each person contributes—often outside of awareness—to
+              the patterns that shape their interactions. By bringing these
+              processes into focus, couples can begin to understand not only
+              what is happening between them, but why.
+            </p>
+            <p>
+              This growing awareness can open the possibility for new ways of
+              relating—ways that are less constrained by past experiences and
+              more responsive to the realities of the present relationship.
+            </p>
           </div>
-        </div>
-      </section>
-
-      <section className={styles.context}>
-        <div className={styles.inner}>
-          <p>
-            Psychoanalytically informed couples therapy can offer a space to
-            reflect more deeply on these dynamics. It invites partners to
-            examine how each person contributes—often outside of awareness—to
-            the patterns that shape their interactions. By bringing these
-            processes into focus, couples can begin to understand not only what
-            is happening between them, but why.
-          </p>
-          <p>
-            This growing awareness can open the possibility for new ways of
-            relating—ways that are less constrained by past experiences and more
-            responsive to the realities of the present relationship.
-          </p>
         </div>
       </section>
 

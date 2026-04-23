@@ -31,24 +31,19 @@ const Pmad: React.FC = () => {
               cultural expectations surrounding motherhood, can make this a
               particularly complex and emotionally charged time.
             </p>
+            <p>
+              Research suggests that approximately 20% of women and their
+              families experience perinatal mood and anxiety disorders (PMADs).
+              When unrecognized or untreated, these conditions can have
+              significant and lasting effects on the mental, physical, and
+              emotional well-being of the mother, child, and family as a whole.
+            </p>
+            <p>
+              For this reason, I believe in the careful assessment and timely
+              treatment of PMADs as essential in supporting healthy development
+              and psychological functioning across the family system.
+            </p>
           </div>
-        </div>
-      </section>
-
-      <section className={styles.context}>
-        <div className={styles.inner}>
-          <p>
-            Research suggests that approximately 20% of women and their families
-            experience perinatal mood and anxiety disorders (PMADs). When
-            unrecognized or untreated, these conditions can have significant and
-            lasting effects on the mental, physical, and emotional well-being of
-            the mother, child, and family as a whole.
-          </p>
-          <p>
-            For this reason, I believe in the careful assessment and timely
-            treatment of PMADs as essential in supporting healthy development
-            and psychological functioning across the family system.
-          </p>
         </div>
       </section>
 

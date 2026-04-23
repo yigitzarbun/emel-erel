@@ -33,26 +33,26 @@ const Approach: React.FC = () => {
               and start taking steps towards making changes, and building a more
               satisfactory and fulfilling lives.
             </p>
+            <p>
+              Based on this understanding, the type of talk therapy that I
+              provide aims to initially build a trusting relationship, a
+              collaborative work with my patients to help them gain a better
+              understanding of the impact of these early, formative experiences
+              and examine how the past can still be alive in the present.
+              Together, we bring these deeply buried memories, thoughts,
+              feelings, wishes, and yearnings to the surface and understand
+              their impact on our current behaviors.
+            </p>
+            <p>
+              To summarize, my approach to therapy aims for deeper, structural
+              change not only symptom reduction.
+            </p>
           </div>
         </div>
       </section>
 
       {/* APPROACH / PHILOSOPHY */}
-      <section className={styles.approach}>
-        <p>
-          Based on this understanding, the type of talk therapy that I provide
-          aims to initially build a trusting relationship, a collaborative work
-          with my patients to help them gain a better understanding of the
-          impact of these early, formative experiences and examine how the past
-          can still be alive in the present. Together, we bring these deeply
-          buried memories, thoughts, feelings, wishes, and yearnings to the
-          surface and understand their impact on our current behaviors.
-        </p>
-        <p>
-          To summarize, my approach to therapy aims for deeper, structural
-          change not only symptom reduction.
-        </p>
-      </section>
+      <section className={styles.approach}></section>
 
       {/* EDUCATION & CREDENTIALS */}
       <section className={styles.education}>
