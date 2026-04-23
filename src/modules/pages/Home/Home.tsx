@@ -1,14 +1,8 @@
 import React from "react";
 import SEO from "../../SEO/SEO";
 import styles from "./styles.module.scss";
-import Paths from "../../../routing/Paths";
-import { useNavigate } from "react-router-dom";
 
 const Home: React.FC = () => {
-  const navigate = useNavigate();
-  const handleNavigateToContact = () => {
-    navigate(Paths.CONTACT);
-  };
   return (
     <div className={styles.page}>
       <SEO title="Home" />
